@@ -1,0 +1,15 @@
+@import "../../styles/colors";
+
+.list-point {
+  width: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+
+  &__item {
+    font-family: Montserrat, sans-serif;
+    font-size: 1.4em;
+    font-weight: 700;
+    color: transparentize($black, 0.2);
+  }
+}

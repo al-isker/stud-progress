@@ -1,0 +1,43 @@
+@import '../../styles/colors';
+
+.header-bottom {
+  position: sticky;
+  top: 0;
+  z-index: 99;
+
+  background-color: $white;
+  border-bottom: solid 1px transparentize($black, 0.8);
+  box-shadow: transparentize($black, 0.9) 0 0 5px;
+
+  overflow-x: auto;
+
+  @media (hover: hover) {
+    &::-webkit-scrollbar {
+      height: 4px;
+    }
+    &::-webkit-scrollbar-track {
+      background-color: transparentize($black, 0.8);
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: transparentize($black, 0.7);
+      &:hover {
+        background-color: transparentize($black, 0.6);
+      }
+    }
+  }
+  @media (hover: none) {
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &__container {
+    width: max-content;
+    margin: 0;
+  }
+
+  &__wrapper {
+    display: flex;
+    margin: 0 -10px;
+  }
+}

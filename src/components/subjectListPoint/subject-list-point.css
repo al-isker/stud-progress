@@ -1,0 +1,14 @@
+.list-point {
+  width: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.list-point__item {
+  font-family: Montserrat, sans-serif;
+  font-size: 1.4em;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+/*# sourceMappingURL=subject-list-point.css.map */

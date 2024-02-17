@@ -1,0 +1,10 @@
+@import "../../styles/colors";
+
+.type {
+  margin-bottom: 15px;
+  font-size: 0.9em;
+  font-weight: 600;
+  line-height: 50%;
+  color: transparentize($black, 0.4);
+  letter-spacing: 0.4px;
+}

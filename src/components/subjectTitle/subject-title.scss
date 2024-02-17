@@ -1,0 +1,17 @@
+@import "../../styles/colors";
+
+.title {
+  padding-bottom: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: Jost, sans-serif;
+  font-size: 1.8em;
+  font-weight: 700;
+  color: $red;
+
+  &_full {
+    white-space: normal;
+    text-overflow: clip;
+  }
+}

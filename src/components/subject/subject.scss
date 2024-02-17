@@ -1,0 +1,48 @@
+@import '../../styles/colors';
+
+.subject {
+  padding: 10px;
+  border: transparentize($red, 0.6) 1.5px solid;
+  border-radius: 4px;
+  background-color: $white;
+  //box-shadow: transparentize($black, 0.9) 0 4px 4px -2px;
+
+  display: grid;
+  column-gap: 20px;
+  grid-template-areas:
+            "title as "
+            "type  as "
+            "lp    as "
+            "btn   btn";
+
+
+  &__title {
+    grid-area: title;
+  }
+
+  &__type {
+    grid-area: type;
+  }
+
+  &__average-score {
+    grid-area: as;
+    justify-self: end;
+  }
+
+  &__list-point {
+    grid-area: lp;
+  }
+
+  &__settings {
+    grid-area: btn;
+
+    margin-top: 10px;
+    display: flex;
+    justify-content: stretch;
+    gap: 6px;
+  }
+
+  &__btn {
+    width: 50%;
+  }
+}

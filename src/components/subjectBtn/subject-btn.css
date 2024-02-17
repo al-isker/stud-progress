@@ -1,0 +1,27 @@
+.btn-settings {
+  font-size: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  background-color: rgb(253, 23, 82);
+  border-radius: 3px;
+  padding: 3px 0;
+}
+.btn-settings__title {
+  font-family: Montserrat, sans-serif;
+  font-size: 0.8em;
+  font-weight: 700;
+  color: rgb(255, 255, 255);
+}
+@media (max-width: 350px) {
+  .btn-settings__title {
+    display: none;
+  }
+}
+.btn-settings__icon {
+  font-size: 1.4em;
+  color: rgb(255, 255, 255);
+}
+
+/*# sourceMappingURL=subject-btn.css.map */

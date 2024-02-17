@@ -1,0 +1,56 @@
+@import "../../styles/colors";
+
+.average-score {
+  $progress: 66%;
+
+  display: flex;
+  gap: 3px;
+  align-items: center;
+
+  &__status {
+    font-size: 1.6em;
+    font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24;
+
+    &_plus {
+      color: $good;
+    }
+    &_minus {
+      color: $bad;
+    }
+  }
+
+  &__progress-circle {
+    position: relative;
+    width: 4.8em;
+    height: 4.8em;
+    border-radius: 50%;
+
+    background-image: conic-gradient(
+                    transparentize($red, 0) $progress,
+                    transparentize($black, 0.9) 0);
+  }
+
+  &__value {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    top: 5px;
+    left: 5px;
+
+    border-radius: 50%;
+    background-color: $white;
+
+    font-family: Montserrat, sans-serif;
+    font-size: 1.7em;
+    font-weight: 800;
+    color: transparentize($black, 0.2);
+  }
+}
