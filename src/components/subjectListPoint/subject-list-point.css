@@ -1,10 +1,9 @@
-.list-point {
-  width: fit-content;
+.subject-list-point {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
 }
-.list-point__item {
+.subject-list-point__item {
   font-family: Montserrat, sans-serif;
   font-size: 1.4em;
   font-weight: 700;

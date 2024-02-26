@@ -1,18 +1,5 @@
 @import "../../styles/colors";
 
 .general {
-  height: 120vh;
   background-color: transparentize($black, 0.95);
-
-  &__container {
-    padding-top: 20px;
-  }
-
-  &__wrapper {
-    overflow: hidden;
-
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
 }

@@ -1,19 +1,15 @@
-import {useState} from "react";
+import {forwardRef, useState} from "react";
 
 import './subject-title.css'
 
 const SubjectTitle = ({className, title}) => {
   const [isShow, setShow] = useState(false);
 
-  const handleClick = () => setShow(!isShow);
-
   return (
     <h2
-      className={className + (isShow ? ' title title_full' : ' title')}
-      onClick={handleClick}
-    >
-      {title}
-    </h2>
+      className={className + (isShow ? ' subject-title subject-title_full' : ' subject-title')}
+      onClick={() => setShow(!isShow)}
+    >{title}</h2>
   );
 };
 

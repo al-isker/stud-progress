@@ -4,12 +4,11 @@
   position: sticky;
   top: 0;
   z-index: 99;
+  overflow-x: auto;
 
   background-color: $white;
   border-bottom: solid 1px transparentize($black, 0.8);
-  box-shadow: transparentize($black, 0.9) 0 0 5px;
-
-  overflow-x: auto;
+  box-shadow: transparentize($black, 0.8) 0 0 4px;
 
   @media (hover: hover) {
     &::-webkit-scrollbar {
@@ -32,12 +31,20 @@
   }
 
   &__container {
-    width: max-content;
-    margin: 0;
+    padding: 0;
   }
 
   &__wrapper {
     display: flex;
-    margin: 0 -10px;
+    gap: 24px;
+  }
+
+  &__nav-btn {
+    &:first-child {
+      padding-left: var(--main-padding);
+    }
+    &:last-child {
+      padding-right: var(--main-padding);
+    }
   }
 }

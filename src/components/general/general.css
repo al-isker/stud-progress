@@ -1,15 +1,5 @@
 .general {
-  height: 120vh;
   background-color: rgba(0, 0, 0, 0.05);
-}
-.general__container {
-  padding-top: 20px;
-}
-.general__wrapper {
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
 }
 
 /*# sourceMappingURL=general.css.map */

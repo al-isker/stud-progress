@@ -3,14 +3,14 @@ import './subject-btn.css';
 const SubjectBtn = ({className, title, icon, onClick}) => {
   return (
     <button
-      className={className + ' btn-settings'}
+      className={className + ' subject-btn'}
       type="button"
       onClick={onClick}
     >
-      <span className="btn-settings__title">
+      <span className="subject-btn__title">
         {title}
       </span>
-      <span className="btn-settings__icon material-symbols-outlined">
+      <span className="subject-btn__icon material-symbols-outlined">
         {icon}
       </span>
     </button>

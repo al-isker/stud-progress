@@ -1,0 +1,25 @@
+.subject-average-score {
+  position: relative;
+  width: 4.8em;
+  height: 4.8em;
+  border-radius: 50%;
+  background-image: conic-gradient(rgb(255, 29, 87) var(--progress), rgba(0, 0, 0, 0.1) calc(100% - var(--progress)));
+}
+.subject-average-score__value {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+  top: 5px;
+  left: 5px;
+  border-radius: 50%;
+  background-color: rgb(255, 255, 255);
+  font-family: Montserrat, sans-serif;
+  font-size: 1.7em;
+  font-weight: 800;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+/*# sourceMappingURL=subject-average-score.css.map */

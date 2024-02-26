@@ -1,37 +1,59 @@
 @import '../../styles/colors';
 
 .new-subject {
-  height: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  overflow: hidden;
+  height: auto;
+  max-width: 46em;
+  border: transparentize($main-color, 0.6) 1.5px solid;
+  border-radius: 4px;
+  background-color: $white;
 
-  border: transparentize($black, 0.7) 1.5px solid;
-  border-radius: 5px;
-  background-color: transparentize($white, 0.25);
-  box-shadow: transparentize($black, 0.9) 0 4px 4px -2px;
+  &__creation {
+    height: auto;
+    padding-inline: 10px;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    justify-content: stretch;
+  }
 
-  transition: 0.05s;
+  &__settings {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    gap: 6px;
+  }
+
+  &__btn {
+    width: 50%;
+  }
+
+  @media (max-width: 350px) {
+    &__settings {
+      flex-direction: column;
+    }
+    &__btn {
+      width: 100%;
+    }
+  }
+
+
+  &__not-creation {
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
   &__icon {
     font-size: 2.2em;
-    color: transparentize($black, 0.6);
+    color: transparentize($black, 0.5);
     font-variation-settings:
             'FILL' 0,
             'wght' 300,
             'GRAD' 0,
             'opsz' 28;
-  }
-
-  @media(hover: hover) {
-    &:hover {
-      transform: scale(0.98);
-    }
-  }
-
-  @media(hover: none) {
-    &:active {
-      transform: scale(0.98);
-    }
   }
 }

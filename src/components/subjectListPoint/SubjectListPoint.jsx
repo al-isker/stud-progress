@@ -1,13 +1,12 @@
 import './subject-list-point.css';
 
 const SubjectListPoint = ({className, rating}) => {
+  if(!rating.length) return null;
+
   return (
-    <div className={className + ' list-point'}>
+    <div className={className + ' subject-list-point'}>
       {rating.map((item, i) => (
-        <div
-          key={i}
-          className="list-point__item"
-        >
+        <div key={i} className="subject-list-point__item">
           {item}
         </div>
       ))}

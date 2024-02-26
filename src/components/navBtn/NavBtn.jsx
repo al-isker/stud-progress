@@ -1,15 +1,17 @@
+import {NavLink} from "react-router-dom";
+
 import './nav-btn.css';
 
-const NavBtn = ({children, isActive, onClick}) => {
+const NavBtn = ({className, children, to}) => {
   return (
-    <button
-      onClick={onClick}
-      className={isActive ? 'nav-btn nav-btn_active' : 'nav-btn'}
+    <NavLink
+      to={to}
+      className={({isActive}) => className + (isActive ? ' nav-btn nav-btn_active' : ' nav-btn')}
     >
       <div className="nav-btn__text">
         {children}
       </div>
-    </button>
+    </NavLink>
   );
 };
 

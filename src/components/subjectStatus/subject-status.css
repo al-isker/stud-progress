@@ -1,0 +1,15 @@
+.subject-status {
+  font-size: 1.6em;
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+.subject-status_plus {
+  color: #08ef0b;
+}
+.subject-status_minus {
+  color: #e30101;
+}
+.subject-status_normal {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+/*# sourceMappingURL=subject-status.css.map */

@@ -1,11 +1,11 @@
 .subject {
   padding: 10px;
-  border: rgba(253, 23, 82, 0.4) 1.5px solid;
+  border: rgba(255, 29, 87, 0.4) 1.5px solid;
   border-radius: 4px;
   background-color: rgb(255, 255, 255);
   display: grid;
-  column-gap: 20px;
-  grid-template-areas: "title as " "type  as " "lp    as " "btn   btn";
+  column-gap: 10px;
+  grid-template-areas: "title as " "type  as " "lp    as " "ir    ir " "btn   btn";
 }
 .subject__title {
   grid-area: title;
@@ -13,22 +13,38 @@
 .subject__type {
   grid-area: type;
 }
-.subject__average-score {
+.subject__average-score-status {
   grid-area: as;
   justify-self: end;
+  display: flex;
+  gap: 3px;
+  align-items: center;
 }
 .subject__list-point {
   grid-area: lp;
+}
+.subject__input-radio {
+  grid-area: ir;
+  margin-top: 10px;
 }
 .subject__settings {
   grid-area: btn;
   margin-top: 10px;
   display: flex;
+  flex-direction: row;
   justify-content: stretch;
   gap: 6px;
 }
 .subject__btn {
   width: 50%;
+}
+@media (max-width: 350px) {
+  .subject__settings {
+    flex-direction: column;
+  }
+  .subject__btn {
+    width: 100%;
+  }
 }
 
 /*# sourceMappingURL=subject.css.map */

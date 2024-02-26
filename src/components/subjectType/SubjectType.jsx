@@ -2,9 +2,7 @@ import './subject-type.css';
 
 const SubjectType = ({className, type}) => {
   return (
-    <div
-      className={className + ' type'}
-    >
+    <div className={className + ' subject-type'}>
       {type}
     </div>
   );

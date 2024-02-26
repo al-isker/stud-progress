@@ -1,35 +1,15 @@
-import {useState} from 'react';
-
-import NavBtn from "../navBtn/NavBtn.jsx";
+import NavBtn from "../navBtn/NavBtn";
 import './header-bottom.css';
 
-const pages = [
-  'Главная',
-  'Статистика',
-  'Рекомендации',
-  'История',
-];
-
 const HeaderBottom = () => {
-  const [activeBtn, setActiveBtn] = useState(0);
-
-  const clickHandler = (n) => {
-    setActiveBtn(n);
-  }
-
   return (
     <header className="header-bottom">
       <div className="header-bottom__container container">
         <nav className="header-bottom__wrapper">
-          {pages.map((item, i) => (
-            <NavBtn
-              key={i}
-              isActive={i === activeBtn}
-              onClick={() => clickHandler(i)}
-            >
-              {item}
-            </NavBtn>
-          ))}
+          <NavBtn className="header-bottom__nav-btn" to="/">Главная</NavBtn>
+          <NavBtn className="header-bottom__nav-btn" to="/statistics">Статистика</NavBtn>
+          <NavBtn className="header-bottom__nav-btn" to="/recommendation">Рекомендации</NavBtn>
+          <NavBtn className="header-bottom__nav-btn" to="/history">История</NavBtn>
         </nav>
       </div>
     </header>

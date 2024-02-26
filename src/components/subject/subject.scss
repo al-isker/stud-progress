@@ -2,19 +2,19 @@
 
 .subject {
   padding: 10px;
-  border: transparentize($red, 0.6) 1.5px solid;
+  border: transparentize($main-color, 0.6) 1.5px solid;
   border-radius: 4px;
   background-color: $white;
   //box-shadow: transparentize($black, 0.9) 0 4px 4px -2px;
 
   display: grid;
-  column-gap: 20px;
+  column-gap: 10px;
   grid-template-areas:
             "title as "
             "type  as "
             "lp    as "
+            "ir    ir "
             "btn   btn";
-
 
   &__title {
     grid-area: title;
@@ -24,13 +24,23 @@
     grid-area: type;
   }
 
-  &__average-score {
+  &__average-score-status {
     grid-area: as;
+
     justify-self: end;
+    display: flex;
+    gap: 3px;
+    align-items: center;
   }
 
   &__list-point {
     grid-area: lp;
+  }
+
+  &__input-radio {
+    grid-area: ir;
+
+    margin-top: 10px;
   }
 
   &__settings {
@@ -38,11 +48,21 @@
 
     margin-top: 10px;
     display: flex;
+    flex-direction: row;
     justify-content: stretch;
     gap: 6px;
   }
 
   &__btn {
     width: 50%;
+  }
+
+  @media (max-width: 350px) {
+    &__settings {
+      flex-direction: column;
+    }
+    &__btn {
+      width: 100%;
+    }
   }
 }

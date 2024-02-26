@@ -35,7 +35,7 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 button{cursor: pointer;-webkit-tap-highlight-color: transparent;}
 button::-moz-focus-inner {padding:0;border:0;}
-a, a:visited{text-decoration: none; color: inherit}
+a, a:visited{text-decoration: none; color: inherit; -webkit-tap-highlight-color: transparent;}
 a:hover{text-decoration: none;}
 ul li{list-style: none;}
 img{vertical-align: top;}

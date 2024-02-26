@@ -1,0 +1,97 @@
+@import "../../styles/colors";
+
+.subject-input-text {
+  position: relative;
+
+  &__input {
+    width: 100%;
+    padding: 4px 10px;
+    border-radius: 4px;
+    transition: 0.2s;
+
+    font-family: Montserrat, sans-serif;
+    font-size: 0.8em;
+    font-weight: 400;
+
+    border: transparentize($black, 0.8) solid 1px;
+    color: transparentize($black, 0.25);
+
+    &::placeholder {
+      color: transparentize($black, 0.6);
+    }
+
+    &_default {
+      &:focus {
+        border: transparentize($black, 0.3) solid 1.5px;
+      }
+    }
+
+    &_invalid {
+      border: $red solid 1.5px;
+      &:focus {
+        border: $red solid 1.5px;
+      }
+    }
+
+    &_valid {
+      border: $turquoise solid 1.5px;
+      &:focus {
+        border: transparentize($black, 0.3) solid 1.5px;
+      }
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 0.1em;
+    right: 10px;
+
+    &:after {
+      content: '';
+      font-size: 0.9em;
+      color: $turquoise;
+      font-variation-settings:
+              'FILL' 1,
+              'wght' 300,
+              'GRAD' 0,
+              'opsz' 24;
+    }
+
+    &_default {
+      &:after {
+        content: '';
+      }
+    }
+
+    &_invalid {
+      &:after {
+        color: $red;
+        content: 'warning';
+      }
+    }
+    &_valid {
+      color: $turquoise;
+      &:after {
+        content: 'check_circle';
+      }
+    }
+  }
+
+
+  &__suggest {
+    width: 100%;
+    padding: 3px 10px;
+    position: absolute;
+    top: calc(1.6em + 10px);
+
+    background-color: mix($black, $white, 2.5%);
+    border: transparentize($black, 0.5) solid 1px;
+    border-radius: 4px;
+
+    font-family: Jost, sans-serif;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: transparentize($black, 0.25);
+
+  }
+}
