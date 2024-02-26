@@ -3,13 +3,14 @@
 }
 .subject-input-text__input {
   width: 100%;
-  padding: 4px 10px;
+  padding: 3px 10px;
   border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.025);
   transition: 0.2s;
-  font-family: Montserrat, sans-serif;
-  font-size: 0.8em;
-  font-weight: 400;
-  border: rgba(0, 0, 0, 0.2) solid 1px;
+  font-family: Jost, sans-serif;
+  font-size: 1.1em;
+  font-weight: 600;
+  border: rgba(0, 0, 0, 0.2) solid 1.5px;
   color: rgba(0, 0, 0, 0.75);
 }
 .subject-input-text__input::placeholder {
@@ -30,12 +31,10 @@
 .subject-input-text__input_valid:focus {
   border: rgba(0, 0, 0, 0.7) solid 1.5px;
 }
-.subject-input-text__icon {
-  position: absolute;
-  top: 0.1em;
-  right: 10px;
-}
 .subject-input-text__icon:after {
+  position: absolute;
+  top: 18%;
+  right: 10px;
   content: "";
   font-size: 0.9em;
   color: #15a58e;
@@ -58,7 +57,7 @@
   width: 100%;
   padding: 3px 10px;
   position: absolute;
-  top: calc(1.6em + 10px);
+  top: 1.6em;
   background-color: #f9f9f9;
   border: rgba(0, 0, 0, 0.5) solid 1px;
   border-radius: 4px;

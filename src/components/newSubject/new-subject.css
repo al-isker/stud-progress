@@ -2,7 +2,7 @@
   overflow: hidden;
   height: auto;
   max-width: 46em;
-  border: rgba(255, 29, 87, 0.4) 1.5px solid;
+  border: rgba(0, 0, 0, 0.2) 1.5px solid;
   border-radius: 4px;
   background-color: rgb(255, 255, 255);
 }

@@ -50,14 +50,14 @@ const SubjectInputText = ({name, db, placeholder}) => {
         }
       ></span>
 
-      {isSuggest && (
-        <div className="subject-input-text__suggest">
-          {db.filter(item => item.toLowerCase().includes(value.toLowerCase()))
-            .slice(0, 5).map((item, i) => (
-            <div key={i} className="subject-input-text__suggest__item">{item}</div>
-          ))}
-        </div>
-      )}
+      {/*{isSuggest && (*/}
+      {/*  <div className="subject-input-text__suggest">*/}
+      {/*    {db.filter(item => item.toLowerCase().includes(value.toLowerCase()))*/}
+      {/*      .slice(0, 5).map((item, i) => (*/}
+      {/*      <div key={i} className="subject-input-text__suggest__item">{item}</div>*/}
+      {/*    ))}*/}
+      {/*  </div>*/}
+      {/*)}*/}
     </label>
   );
 };
