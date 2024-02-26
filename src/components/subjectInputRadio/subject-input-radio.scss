@@ -10,17 +10,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 3px 5px;
+    padding: 4px 5px;
+    border-style: solid;
+    border-width: 1px;
     border-radius: 4px;
-    background-color: transparentize($black, 0.975);
     transition: 0.15s;
 
     text-align: center;
-    font-family: Jost, sans-serif;
-    font-size: 1.1em;
-    font-weight: 600;
+    font-family: Montserrat, sans-serif;
+    font-size: 0.9em;
+    font-weight: 400;
+    letter-spacing: -0.2px;
 
-    border: transparentize($black, 0.8) solid 1.5px;
+    border-color: transparentize($black, 0.8);
     color: transparentize($black, 0.6);
 
     &:hover {
@@ -28,7 +30,7 @@
     }
 
     &_active {
-      border: $turquoise solid 1.5px;
+      border-color: transparentize($black, 0.5);
       color: transparentize($black, 0.25);
     }
   }

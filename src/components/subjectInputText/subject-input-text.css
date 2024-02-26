@@ -3,68 +3,66 @@
 }
 .subject-input-text__input {
   width: 100%;
-  padding: 3px 10px;
+  padding: 5px 35px 5px 8px;
+  border-style: solid;
+  border-width: 1px;
   border-radius: 4px;
-  background-color: rgba(0, 0, 0, 0.025);
   transition: 0.2s;
-  font-family: Jost, sans-serif;
-  font-size: 1.1em;
-  font-weight: 600;
-  border: rgba(0, 0, 0, 0.2) solid 1.5px;
-  color: rgba(0, 0, 0, 0.75);
+  font-family: Montserrat, sans-serif;
+  font-size: 1em;
+  font-weight: 400;
+  letter-spacing: -0.2px;
+  color: rgba(0, 0, 0, 0.8);
+  border-color: rgba(0, 0, 0, 0.2);
 }
 .subject-input-text__input::placeholder {
   color: rgba(0, 0, 0, 0.4);
 }
-.subject-input-text__input_default:focus {
-  border: rgba(0, 0, 0, 0.7) solid 1.5px;
-}
-.subject-input-text__input_invalid {
-  border: #e30101 solid 1.5px;
-}
-.subject-input-text__input_invalid:focus {
-  border: #e30101 solid 1.5px;
+.subject-input-text__input:focus {
+  border-color: rgba(0, 0, 0, 0.7);
 }
 .subject-input-text__input_valid {
-  border: #15a58e solid 1.5px;
+  border-color: rgba(0, 0, 0, 0.5);
 }
-.subject-input-text__input_valid:focus {
-  border: rgba(0, 0, 0, 0.7) solid 1.5px;
+.subject-input-text__input_invalid {
+  border-color: #e30101 solid 1px;
+}
+.subject-input-text__input_invalid:focus {
+  border-color: #e30101;
 }
 .subject-input-text__icon:after {
   position: absolute;
   top: 18%;
-  right: 10px;
+  right: 8px;
   content: "";
+  color: #12ceb0;
   font-size: 0.9em;
-  color: #15a58e;
   font-variation-settings: "FILL" 1, "wght" 300, "GRAD" 0, "opsz" 24;
 }
 .subject-input-text__icon_default:after {
   content: "";
 }
+.subject-input-text__icon_valid:after {
+  color: #12ceb0;
+  content: "check_circle";
+}
 .subject-input-text__icon_invalid:after {
   color: #e30101;
   content: "warning";
 }
-.subject-input-text__icon_valid {
-  color: #15a58e;
-}
-.subject-input-text__icon_valid:after {
-  content: "check_circle";
-}
 .subject-input-text__suggest {
   width: 100%;
-  padding: 3px 10px;
+  padding: 3px 8px;
   position: absolute;
   top: 1.6em;
-  background-color: #f9f9f9;
-  border: rgba(0, 0, 0, 0.5) solid 1px;
+  background-color: rgb(255, 255, 255);
+  border: rgba(0, 0, 0, 0.7) solid 1px;
   border-radius: 4px;
-  font-family: Jost, sans-serif;
-  font-size: 1.1em;
-  font-weight: 600;
   color: rgba(0, 0, 0, 0.75);
+  font-family: Montserrat, sans-serif;
+  font-size: 1em;
+  font-weight: 400;
+  letter-spacing: -0.2px;
 }
 
 /*# sourceMappingURL=subject-input-text.css.map */

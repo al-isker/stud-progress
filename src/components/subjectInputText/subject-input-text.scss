@@ -5,39 +5,36 @@
 
   &__input {
     width: 100%;
-    padding: 3px 10px;
+    padding: 5px 35px 5px 8px;
+    border-style: solid;
+    border-width: 1px;
     border-radius: 4px;
-    background-color: transparentize($black, 0.975);
     transition: 0.2s;
 
-    font-family: Jost, sans-serif;
-    font-size: 1.1em;
-    font-weight: 600;
+    font-family: Montserrat, sans-serif;
+    font-size: 1em;
+    font-weight: 400;
+    letter-spacing: -0.2px;
 
-    border: transparentize($black, 0.8) solid 1.5px;
-    color: transparentize($black, 0.25);
+    color: transparentize($black, 0.2);
+    border-color: transparentize($black, 0.8);
 
     &::placeholder {
       color: transparentize($black, 0.6);
     }
 
-    &_default {
-      &:focus {
-        border: transparentize($black, 0.3) solid 1.5px;
-      }
-    }
-
-    &_invalid {
-      border: $red solid 1.5px;
-      &:focus {
-        border: $red solid 1.5px;
-      }
+    &:focus {
+      border-color: transparentize($black, 0.3);
     }
 
     &_valid {
-      border: $turquoise solid 1.5px;
+      border-color: transparentize($black, 0.5);
+    }
+
+    &_invalid {
+      border-color: $red solid 1px;
       &:focus {
-        border: transparentize($black, 0.3) solid 1.5px;
+        border-color: $red;
       }
     }
   }
@@ -46,11 +43,11 @@
     &:after {
       position: absolute;
       top: 18%;
-      right: 10px;
+      right: 8px;
 
       content: '';
-      font-size: 0.9em;
       color: $turquoise;
+      font-size: 0.9em;
       font-variation-settings:
               'FILL' 1,
               'wght' 300,
@@ -64,35 +61,36 @@
       }
     }
 
+    &_valid {
+      &:after {
+        color: $turquoise;
+        content: 'check_circle';
+      }
+    }
+
     &_invalid {
       &:after {
         color: $red;
         content: 'warning';
       }
     }
-    &_valid {
-      color: $turquoise;
-      &:after {
-        content: 'check_circle';
-      }
-    }
   }
-
 
   &__suggest {
     width: 100%;
-    padding: 3px 10px;
+    padding: 3px 8px;
     position: absolute;
     top: 1.6em;
 
-    background-color: mix($black, $white, 2.5%);
-    border: transparentize($black, 0.5) solid 1px;
+    background-color: $white;
+    border: transparentize($black, 0.3) solid 1px;
     border-radius: 4px;
 
-    font-family: Jost, sans-serif;
-    font-size: 1.1em;
-    font-weight: 600;
     color: transparentize($black, 0.25);
+    font-family: Montserrat, sans-serif;
+    font-size: 1em;
+    font-weight: 400;
+    letter-spacing: -0.2px;
 
   }
 }
