@@ -20,21 +20,25 @@
 }
 .subject-input-text__input:focus {
   border-color: rgba(0, 0, 0, 0.7);
+  box-shadow: rgba(0, 0, 0, 0.4) 0 0 4px -1px inset;
 }
 .subject-input-text__input_valid {
   border-color: rgba(0, 0, 0, 0.5);
 }
 .subject-input-text__input_invalid {
-  border-color: #e30101 solid 1px;
+  border-color: #e30101;
 }
 .subject-input-text__input_invalid:focus {
   border-color: #e30101;
 }
-.subject-input-text__icon:after {
+.subject-input-text__icon {
   position: absolute;
-  top: 18%;
+  top: 5px;
   right: 8px;
+}
+.subject-input-text__icon::after {
   content: "";
+  display: block;
   color: #12ceb0;
   font-size: 0.9em;
   font-variation-settings: "FILL" 1, "wght" 300, "GRAD" 0, "opsz" 24;
