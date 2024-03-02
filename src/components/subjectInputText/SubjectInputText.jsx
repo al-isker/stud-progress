@@ -3,11 +3,64 @@ import {useState} from "react";
 import './subject-input-text.css';
 
 const SubjectInputText = ({name, db, placeholder}) => {
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState({
+    id: undefined,
+    str: ''
+  });
+  const [suggest, setSuggest] = useState({
+    show: false,
+    elements: []
+  });
   const [isValid, setValid] = useState('default');
-  const [isSuggest, setSuggest] = useState(false);
 
-  const validation = (e) => db.includes(e.target.value.trim());
+  const validation = (e, db) => {
+    const value = e.target.value.trim().toLowerCase();
+
+    // пусть this ф-я принимает значение параметром bd
+    // в качестве bd передавать suggest.elements, которые уже отсортированы
+    // это позволит оптимизировать валидация
+    return db.some(item => item.subject.toLowerCase() === value);
+  }
+
+  const handleOnChange = (e) => {
+    setValue({
+      ...value,
+      str: e.target.value
+    });
+
+    let elements = [];
+
+    if(e.target.value.trim().length) {
+      elements = db.filter(item => (
+        item.subject.toLowerCase().includes(e.target.value.trim().toLowerCase())
+      ));
+
+      console.log('filter...');
+    }
+
+    setSuggest({
+      show: Boolean(elements.length),
+      elements: elements
+    });
+
+    if (validation(e, suggest.elements)) setValid('valid');
+  }
+
+  const handleOnFocus = () => {
+    setSuggest({
+      ...suggest,
+      show: Boolean(suggest.elements.length)
+    });
+  }
+
+  const handleOnBlur = (e) => {
+    setSuggest({
+      ...suggest,
+      show: true // вернуть false
+    });
+
+    if (!validation(e, suggest.elements)) setValid('invalid');
+  }
 
   return (
     <label className="subject-input-text">
@@ -20,26 +73,11 @@ const SubjectInputText = ({name, db, placeholder}) => {
         autoComplete="off"
         name={name}
         placeholder={placeholder ?? ''}
-        value={value}
+        value={value.str}
 
-        onChange={(e) => {
-          setValue(e.target.value);
-
-          if (validation(e)) setValid('valid');
-        }}
-
-        onFocus={() => {
-          setSuggest(true);
-        }}
-
-        onBlur={(e) => {
-          setValue(e.target.value);
-
-          setSuggest(false);
-
-          if (validation(e)) setValid('valid')
-          else setValid('invalid');
-        }}
+        onChange={handleOnChange}
+        onFocus={handleOnFocus}
+        onBlur={handleOnBlur}
       />
 
       <span
@@ -50,14 +88,18 @@ const SubjectInputText = ({name, db, placeholder}) => {
         }
       ></span>
 
-      {/*{isSuggest && (*/}
-      {/*  <div className="subject-input-text__suggest">*/}
-      {/*    {db.filter(item => item.toLowerCase().includes(value.toLowerCase()))*/}
-      {/*      .slice(0, 5).map((item, i) => (*/}
-      {/*      <div key={i} className="subject-input-text__suggest__item">{item}</div>*/}
-      {/*    ))}*/}
-      {/*  </div>*/}
-      {/*)}*/}
+      {suggest.show && (
+        <div className="subject-input-text__suggest">
+          {suggest.elements.length > 0 && suggest.elements.map(item => {
+            return (
+              <div
+                key={item.id}
+                className="subject-input-text__suggest__item"
+              >{item.subject}</div>
+            );
+          })}
+        </div>
+      )}
     </label>
   );
 };

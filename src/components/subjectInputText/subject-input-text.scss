@@ -7,13 +7,13 @@
     width: 100%;
     padding: 5px 35px 5px 8px;
     border-style: solid;
-    border-width: 1px;
+    border-width: 1.5px;
     border-radius: 4px;
     transition: 0.2s;
 
     font-family: Montserrat, sans-serif;
     font-size: 1em;
-    font-weight: 400;
+    font-weight: 500;
     letter-spacing: -0.2px;
 
     color: transparentize($black, 0.2);
@@ -24,12 +24,11 @@
     }
 
     &:focus {
-      border-color: transparentize($black, 0.3);
-      box-shadow: transparentize($black, 0.6) 0 0 4px -1px inset;
+      border-color: transparentize($black, 0.2);
     }
 
     &_valid {
-      border-color: transparentize($black, 0.5);
+      border-color: transparentize($black, 0.2);
     }
 
     &_invalid {
@@ -80,19 +79,55 @@
 
   &__suggest {
     width: 100%;
-    padding: 3px 8px;
+    max-height: 360%; // значение подобрано вручную так, чтобы перекрывало весб блок, но не вылезало за рамки
     position: absolute;
-    top: 1.6em;
+    top: calc(1.6em + 12px);
 
     background-color: $white;
-    border: transparentize($black, 0.3) solid 1px;
+    border: transparentize($black, 0.6) solid 1.5px;
     border-radius: 4px;
 
-    color: transparentize($black, 0.25);
-    font-family: Montserrat, sans-serif;
-    font-size: 1em;
-    font-weight: 400;
-    letter-spacing: -0.2px;
+    overflow-y: auto;
 
+    &::-webkit-scrollbar {
+      width: 3px;
+    }
+    &::-webkit-scrollbar-track {
+      border-radius: 0 3px 3px 0;
+      background-color: mix($black, $white, 20);
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: mix($black, $white, 40);
+      &:hover {
+        background-color: mix($black, $white, 50);
+      }
+    }
+
+    &__item {
+      padding: 4px 8px;
+      color: transparentize($black, 0.4);
+      font-family: Montserrat, sans-serif;
+      font-size: 1em;
+      font-weight: 500;
+      letter-spacing: -0.2px;
+
+      &:first-child {
+        padding-top: 6px;
+      }
+      &:last-child {
+        padding-bottom: 6px;
+      }
+
+      @media (hover: hover) {
+        &:hover {
+          background-color: transparentize($black, 0.925);
+        }
+      }
+      @media (hover: none) {
+        &:active {
+          background-color: transparentize($black, 0.925);
+        }
+      }
+    }
   }
 }
