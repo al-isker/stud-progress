@@ -1,0 +1,22 @@
+.header-inner-page {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.header-inner-page__btn-back {
+  width: auto;
+}
+@media (min-width: 768px) {
+  .header-inner-page__btn-back {
+    width: 60px;
+    margin-right: 5px;
+  }
+}
+.header-inner-page__title {
+  font-family: Jost, sans-serif;
+  font-size: 1.5em;
+  font-weight: 600;
+  color: #332c2e;
+}
+
+/*# sourceMappingURL=header-form.css.map */

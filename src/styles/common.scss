@@ -1,21 +1,9 @@
 @import "colors";
 
-:root {
-  --main-padding: 18px;
-
-  @media (min-width: 1024px) {
-    --main-padding: 35px;
-  }
-}
-
-
 body {
-  background-color: $white;
   width: 100%;
-
-  @media (max-width: 280px) {
-    width: 280px;
-  }
+  overflow-y: scroll;
+  background-color: $white;
 
   font-family: Montserrat, sans-serif;
   font-size: 14px;
@@ -28,13 +16,6 @@ body {
   @media (min-width: 1024px) {
     font-size: 16px;
   }
-}
-
-.container {
-  max-width: 1400px;
-  width: 100%;
-  margin-inline: auto;
-  padding-inline: var(--main-padding);
 }
 
 .material-symbols-outlined {

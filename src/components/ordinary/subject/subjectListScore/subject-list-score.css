@@ -1,0 +1,13 @@
+.subject-list-score {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.subject-list-score__item {
+  font-family: Montserrat, sans-serif;
+  font-size: 1.4em;
+  font-weight: 700;
+  color: #332c2e;
+}
+
+/*# sourceMappingURL=subject-list-score.css.map */

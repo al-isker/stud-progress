@@ -1,24 +1,11 @@
-:root {
-  --main-padding: 18px;
-}
-@media (min-width: 1024px) {
-  :root {
-    --main-padding: 35px;
-  }
-}
-
 body {
-  background-color: rgb(255, 255, 255);
   width: 100%;
+  overflow-y: scroll;
+  background-color: rgb(255, 255, 255);
   font-family: Montserrat, sans-serif;
   font-size: 14px;
   font-weight: 400;
   color: #000;
-}
-@media (max-width: 280px) {
-  body {
-    width: 280px;
-  }
 }
 @media (min-width: 768px) {
   body {
@@ -29,13 +16,6 @@ body {
   body {
     font-size: 16px;
   }
-}
-
-.container {
-  max-width: 1400px;
-  width: 100%;
-  margin-inline: auto;
-  padding-inline: var(--main-padding);
 }
 
 .material-symbols-outlined {

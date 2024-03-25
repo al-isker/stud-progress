@@ -1,0 +1,22 @@
+@import "../../../styles/colors";
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  &__title {
+    align-self: start;
+    font-family: Jost, sans-serif;
+    font-size: 1.2em;
+    font-weight: 500;
+    color: $second-color;
+  }
+
+  &__error {
+    margin-top: -2px;
+    font-size: 0.9em;
+    font-weight: 400;
+    color: $red;
+  }
+}

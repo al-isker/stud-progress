@@ -1,0 +1,40 @@
+@import "../../../styles/colors";
+
+.btn-create-subject {
+  max-width: 46em;
+  overflow: hidden;
+
+  &__link {
+    min-height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    background-color: $second-color;
+    border-radius: 4px;
+  }
+
+  &__text {
+    font-family: Jost, sans-serif;
+    font-size: 1.1em;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: $white;
+  }
+
+  &__icon {
+    font-size: 1.6em;
+    //color: $main-color;
+    color: $white;
+    font-variation-settings:
+            'FILL' 0,
+            'wght' 300,
+            'GRAD' 0,
+            'opsz' 28;
+  }
+
+  &:active {
+
+  }
+}

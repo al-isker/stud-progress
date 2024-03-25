@@ -1,0 +1,27 @@
+.btn-create-subject {
+  max-width: 46em;
+  overflow: hidden;
+}
+.btn-create-subject__link {
+  min-height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background-color: #332c2e;
+  border-radius: 4px;
+}
+.btn-create-subject__text {
+  font-family: Jost, sans-serif;
+  font-size: 1.1em;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: rgb(255, 255, 255);
+}
+.btn-create-subject__icon {
+  font-size: 1.6em;
+  color: rgb(255, 255, 255);
+  font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 28;
+}
+
+/*# sourceMappingURL=btn-create-subject.css.map */

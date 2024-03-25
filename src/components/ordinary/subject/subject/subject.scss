@@ -1,0 +1,61 @@
+@import "../../../../styles/colors";
+
+.subject {
+  max-width: 46em;
+  padding: 10px;
+  border: transparentize($second-color, 0.7) 1px solid;
+  border-radius: 4px;
+  background-color: $white;
+
+  display: grid;
+  column-gap: 10px;
+  grid-template-areas:
+            "title as "
+            "type  as "
+            "lp    as "
+            "btn   btn";
+
+  &__title {
+    grid-area: title;
+  }
+
+  &__type {
+    grid-area: type;
+  }
+
+  &__average-score-status {
+    grid-area: as;
+
+    justify-self: end;
+    display: flex;
+    gap: 3px;
+    align-items: center;
+  }
+
+  &__list-point {
+    grid-area: lp;
+  }
+
+  &__settings {
+    grid-area: btn;
+
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-items: stretch;
+    gap: 6px;
+  }
+
+  &__link {
+    width: 50%;
+  }
+
+  @media (max-width: 350px) {
+    &__settings {
+      flex-direction: column;
+    }
+    &__link {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+@import "../../styles/colors";
+
+.create-subject {
+  &__form {
+    max-width: 420px;
+    margin-top: 1.4em;
+    display: flex;
+    flex-direction: column;
+    gap: 1.4em;
+  }
+
+  &__submit {
+    margin-top: 10px;
+    padding-block: 0.3em;
+    font-size: 1.1em;
+  }
+}

@@ -17,9 +17,7 @@ nav,footer,header,aside{display: block;}
 html,body{
 	height: 100%;
 	width: 100%;
-	font-size: 100%;
 	line-height: 1;
-	font-size: 14px;
 	-ms-text-size-adjust: 100%;
 	-moz-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
@@ -35,7 +33,11 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 button{cursor: pointer;-webkit-tap-highlight-color: transparent;}
 button::-moz-focus-inner {padding:0;border:0;}
-a, a:visited{text-decoration: none; color: inherit; -webkit-tap-highlight-color: transparent;}
+a, a:visited{
+	text-decoration: none;
+	color: inherit;
+	-webkit-tap-highlight-color: transparent;
+}
 a:hover{text-decoration: none;}
 ul li{list-style: none;}
 img{vertical-align: top;}

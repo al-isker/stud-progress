@@ -1,0 +1,40 @@
+@import "../../../styles/colors";
+
+.custom-select {
+  &__control {
+    border-width: 0.08em !important;
+    border-radius: 3px !important;
+
+    &--is-focused {
+      border-color: transparentize($black, 0.8) !important;
+      box-shadow: none !important;
+    }
+
+    &--menu-is-open {
+      border-color: $main-color !important;
+      box-shadow: 0 0 0 0.5px $main-color !important;
+    }
+  }
+
+  &__menu {
+    border-radius: 3px !important;
+    border: solid 0.5px transparentize($black, 0.7) !important;
+    box-shadow: 0 0 0 0.5px transparentize($black, 0.7) !important;
+    color: transparentize($black, 0.1) !important;
+  }
+
+  &__option {
+    background-color: $white !important;
+    
+    &--is-focused {
+      background-color: transparentize($black, 0.9) !important;
+      color: transparentize($black, 0.1) !important;
+    }
+
+    &--is-selected {
+      background-color: $main-color !important;
+      color: $white !important;
+    }
+
+  }
+}

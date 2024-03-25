@@ -1,0 +1,13 @@
+:root {
+  --main-padding: 18px;
+
+  @media (min-width: 1024px) {
+    --main-padding: 35px;
+  }
+}
+
+.container {
+  max-width: 1400px;
+  margin-inline: auto;
+  padding-inline: var(--main-padding);
+}
