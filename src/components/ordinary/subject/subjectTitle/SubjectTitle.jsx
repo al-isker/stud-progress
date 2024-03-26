@@ -9,8 +9,8 @@ const SubjectTitle = ({className="", title}) => {
     <h3
       className={className + (isShow ? ' subject-title subject-title_full' : ' subject-title')}
       onClick={() => setShow(!isShow)}
-    >{
-      title}
+    >
+      {title}
     </h3>
   );
 };
