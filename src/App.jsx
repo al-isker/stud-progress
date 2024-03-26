@@ -1,6 +1,6 @@
 import './styles/reset.css';
-import './styles/common.css';
-import './styles/container.css';
+import './styles/common.scss';
+import './styles/container.scss';
 
 import Routing from "./Routing.jsx";
 

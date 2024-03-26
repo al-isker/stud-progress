@@ -1,4 +1,4 @@
-import './subject-list-score.css';
+import './subject-list-score.scss';
 
 const SubjectListScore = ({className, rating}) => {
   if(!rating.length) return null;

@@ -7,7 +7,7 @@ import SubjectStatus from "../subjectStatus/SubjectStatus.jsx";
 import SubjectAverageScore from "../subjectAverageScore/SubjectAverageScore.jsx";
 import Button from "../../../ui/button/Button.jsx";
 
-import './subject.css';
+import './subject.scss';
 
 const Subject = ({className, title, type, maxScore, rating}) => {
   return (

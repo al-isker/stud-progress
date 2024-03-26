@@ -1,7 +1,7 @@
 import BtnNav from "../../../ui/btnNav/BtnNav.jsx";
 
-import './header-bottom.css';
-import '../../../../styles/container.css';
+import './header-bottom.scss';
+import '../../../../styles/container.scss';
 
 const HeaderBottom = () => {
   return (

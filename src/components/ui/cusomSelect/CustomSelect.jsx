@@ -1,7 +1,7 @@
 import Select from "react-select";
 import {Controller} from "react-hook-form";
 
-import './custom-select.css';
+import './custom-select.scss';
 
 const CustomSelect = ({control, name, required, placeholder, options, defaultValue}) => {
   return (

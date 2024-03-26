@@ -1,6 +1,6 @@
 import {Link, useMatch} from "react-router-dom";
 
-import './btn-nav.css';
+import './btn-nav.scss';
 
 const BtnNav = ({className="", children, to}) => {
   const match = useMatch({

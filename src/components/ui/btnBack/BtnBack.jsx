@@ -1,6 +1,6 @@
 import {Link} from "react-router-dom";
 
-import './btn-back.css';
+import './btn-back.scss';
 
 const BtnBack = ({className, to}) => {
   return (

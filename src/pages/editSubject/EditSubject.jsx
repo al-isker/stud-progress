@@ -7,12 +7,15 @@ import SelectType from "../../components/ordinary/form/SelectType.jsx";
 import InputTargetScore from "../../components/ordinary/form/InputTargetScore.jsx";
 import Button from "../../components/ui/button/Button.jsx";
 
-const CreateSubject = () => {
+import './edit-subject.scss';
+
+const EditSubject = () => {
   // забираем информацию о subject
   const subject = {
     title: 0,
     type: 0,
-    targetScore: 3
+    targetScore: 3,
+    listScore: [3, 4, 2, 3]
   };
 
   const {control, formState: {errors}, handleSubmit} = useForm({
@@ -52,4 +55,4 @@ const CreateSubject = () => {
   );
 };
 
-export default CreateSubject;
+export default EditSubject;

@@ -1,15 +1,15 @@
-import {Routes, Route, useLocation} from "react-router-dom";
 import {AnimatePresence} from "framer-motion";
+import {Routes, Route, useLocation} from "react-router-dom";
 
+import Layout from "./components/containers/layout/Layout.jsx";
 import Home from "./pages/home/Home.jsx";
-import CreateSubject from "./pages/createSubject/CreateSubject.jsx";
 import AddPoint from "./pages/addPoint/AddPoint.jsx";
 import EditSubject from "./pages/editSubject/EditSubject.jsx";
+import CreateSubject from "./pages/createSubject/CreateSubject.jsx";
 import Stat from "./pages/stat/Stat.jsx";
 import Rec from "./pages/rec/Rec.jsx";
 import History from "./pages/history/History.jsx";
 import NotFound from "./pages/notFound/NotFound.jsx";
-import Layout from "./components/containers/layout/Layout.jsx";
 
 const Routing = () => {
   const location = useLocation();

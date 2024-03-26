@@ -1,4 +1,4 @@
-import './subject-type.css';
+import './subject-type.scss';
 
 const SubjectType = ({className="", type}) => {
   return (

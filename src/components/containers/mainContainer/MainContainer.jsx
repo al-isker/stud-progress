@@ -1,6 +1,6 @@
 import {motion} from "framer-motion";
 
-import './main-container.css';
+import './main-container.scss';
 
 const MainContainer = ({children, className}) => {
   const transition = {

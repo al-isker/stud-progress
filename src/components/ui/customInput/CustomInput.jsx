@@ -1,6 +1,6 @@
 import {Controller} from "react-hook-form";
 
-import './custom-input.css';
+import './custom-input.scss';
 
 const CustomInput = (props) => {
   const {

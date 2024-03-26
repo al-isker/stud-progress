@@ -1,13 +1,13 @@
 import {Link} from "react-router-dom";
 import {motion} from 'framer-motion'
 
-import './btn-create-subject.css';
+import './btn-create-subject.scss';
 
 const BtnCreateSubject = ({className}) => {
   return (
     <motion.section
       className={className + ' btn-create-subject'}
-      initial={{height:      0}}
+      initial={{height: 0}}
       animate={{
         height: 'auto',
         transition: {

@@ -1,4 +1,4 @@
-import './subject-average-score.css';
+import './subject-average-score.scss';
 
 const SubjectAverageScore = ({className, maxScore, rating}) => {
   if (!rating.length) return null;

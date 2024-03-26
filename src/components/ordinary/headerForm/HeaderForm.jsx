@@ -1,6 +1,6 @@
 import BtnBack from "../../ui/btnBack/BtnBack.jsx";
 
-import './header-form.css';
+import './header-form.scss';
 
 const HeaderForm = ({className="", backTo="", title}) => {
   return (

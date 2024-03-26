@@ -1,4 +1,4 @@
-import './input-wrapper.css';
+import './input-wrapper.scss';
 
 const InputWrapper = ({children, className, title, error, htmlFor}) => {
   return (

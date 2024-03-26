@@ -1,5 +1,7 @@
 import MainContainer from "../../components/containers/mainContainer/MainContainer.jsx";
 
+import './history.scss';
+
 const History = () => {
   return (
     <MainContainer>

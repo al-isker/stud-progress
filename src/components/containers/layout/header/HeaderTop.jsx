@@ -1,5 +1,5 @@
-import './header-top.css';
-import '../../../../styles/container.css';
+import './header-top.scss';
+import '../../../../styles/container.scss';
 
 const HeaderTop = () => {
   return (

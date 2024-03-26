@@ -7,7 +7,7 @@ import SelectType from "../../components/ordinary/form/SelectType.jsx";
 import InputTargetScore from "../../components/ordinary/form/InputTargetScore.jsx";
 import Button from "../../components/ui/button/Button.jsx";
 
-import './create-subject.css';
+import './create-subject.scss';
 
 const CreateSubject = () => {
   const {control, formState: {errors}, handleSubmit} = useForm();

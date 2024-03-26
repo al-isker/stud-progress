@@ -1,6 +1,6 @@
 import {useState} from "react";
 
-import './subject-title.css'
+import './subject-title.scss'
 
 const SubjectTitle = ({className="", title}) => {
   const [isShow, setShow] = useState(false);
