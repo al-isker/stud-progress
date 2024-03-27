@@ -3,7 +3,7 @@ import {Routes, Route, useLocation} from "react-router-dom";
 
 import Layout from "./components/containers/layout/Layout.jsx";
 import Home from "./pages/home/Home.jsx";
-import AddPoint from "./pages/addPoint/AddPoint.jsx";
+import AddScore from "./pages/addScore/AddScore.jsx";
 import EditSubject from "./pages/editSubject/EditSubject.jsx";
 import CreateSubject from "./pages/createSubject/CreateSubject.jsx";
 import Stat from "./pages/stat/Stat.jsx";
@@ -20,7 +20,7 @@ const Routing = () => {
         <Route path="/" element={<Layout/>}>
           <Route path="home/" element={null}>
             <Route index element={<Home/>} />
-            <Route path="subject/add-point" element={<AddPoint/>} />
+            <Route path="subject/add-point" element={<AddScore/>} />
             <Route path="subject/edit" element={<EditSubject/>} />
             <Route path="create-subject" element={<CreateSubject/>} />
           </Route>

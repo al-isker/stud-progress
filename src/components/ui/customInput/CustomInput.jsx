@@ -49,7 +49,7 @@ const CustomInput = (props) => {
 
       render={({ field }) => (
         <input
-          className="input-number"
+          className="custom-input"
           type={type}
           id={name}
           placeholder={placeholder ?? ""}

@@ -4,7 +4,7 @@ import MainContainer from "../../components/containers/mainContainer/MainContain
 import HeaderForm from "../../components/ordinary/headerForm/HeaderForm.jsx";
 import SelectTitle from "../../components/ordinary/form/SelectTitle.jsx";
 import SelectType from "../../components/ordinary/form/SelectType.jsx";
-import InputTargetScore from "../../components/ordinary/form/InputTargetScore.jsx";
+import SelectTarget from "../../components/ordinary/form/SelectTarget.jsx";
 import Button from "../../components/ui/button/Button.jsx";
 
 import './edit-subject.scss';
@@ -12,9 +12,9 @@ import './edit-subject.scss';
 const EditSubject = () => {
   // забираем информацию о subject
   const subject = {
-    title: 0,
-    type: 0,
-    targetScore: 3,
+    title: 3,
+    type: 1,
+    target: 4,
     listScore: [3, 4, 2, 3]
   };
 
@@ -42,7 +42,7 @@ const EditSubject = () => {
       >
         <SelectTitle control={control} errors={errors} defaultValue={subject.title}/>
         <SelectType control={control} errors={errors} defaultValue={subject.type} />
-        <InputTargetScore control={control} errors={errors} defaultValue={subject.targetScore} />
+        <SelectTarget control={control} errors={errors} defaultValue={subject.target} />
 
         <Button
           className="create-subject__submit"

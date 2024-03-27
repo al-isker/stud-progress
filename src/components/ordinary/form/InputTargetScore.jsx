@@ -4,14 +4,14 @@ import CustomInput from "../../ui/customInput/CustomInput.jsx";
 const InputTargetScore = ({control, errors, defaultValue}) => {
   return (
     <InputWrapper
-      title="Целевая отметка"
-      error={errors.targetScore?.message}
-      htmlFor="targetScore"
+      title="Цель"
+      error={errors.target?.message}
+      htmlFor="target"
     >
       <CustomInput
         control={control}
         type="number"
-        name="targetScore"
+        name="target"
         min={1}
         max={5}
         defaultValue={defaultValue ?? 5}

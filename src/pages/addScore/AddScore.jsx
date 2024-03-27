@@ -2,14 +2,10 @@ import {useForm} from "react-hook-form";
 
 import MainContainer from "../../components/containers/mainContainer/MainContainer.jsx";
 import HeaderForm from "../../components/ordinary/headerForm/HeaderForm.jsx";
-import SelectTitle from "../../components/ordinary/form/SelectTitle.jsx";
-import SelectType from "../../components/ordinary/form/SelectType.jsx";
-import InputTargetScore from "../../components/ordinary/form/InputTargetScore.jsx";
 import Button from "../../components/ui/button/Button.jsx";
 
-import './create-subject.scss';
+import './add-score.scss';
 import SelectScore from "../../components/ordinary/form/SelectScore.jsx";
-import SelectTarget from "../../components/ordinary/form/SelectTarget.jsx";
 
 const CreateSubject = () => {
   const {control, formState: {errors}, handleSubmit} = useForm();
@@ -25,16 +21,14 @@ const CreateSubject = () => {
     <MainContainer className="create-subject">
       <HeaderForm
         backTo="/home"
-        title="Новый предмет"
+        title="Добавить балл"
       />
 
       <form
         className="create-subject__form"
         onSubmit={handleSubmit(onSubmit, onError)}
       >
-        <SelectTitle control={control} errors={errors} />
-        <SelectType control={control} errors={errors} />
-        <SelectTarget control={control} errors={errors} />
+        <SelectScore control={control} errors={errors} />
 
         <Button
           className="create-subject__submit"
