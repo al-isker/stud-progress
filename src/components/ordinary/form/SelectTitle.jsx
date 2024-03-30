@@ -1,8 +1,8 @@
 import CustomSelect from "../../ui/cusomSelect/CustomSelect.jsx";
 import InputWrapper from "../inputWrapper/InputWrapper.jsx";
-import {subjectsFromDB} from "../../../data/data.js";
+import {subjectTitles} from "../../../config/constants.js";
 
-const subjectOptions = subjectsFromDB.map(item => ({
+const subjectOptions = subjectTitles.map(item => ({
   value: item.id,
   label: item.title
 }));

@@ -1,14 +1,13 @@
 import InputWrapper from "../inputWrapper/InputWrapper.jsx";
 import CustomRadio from "../../ui/customRadio/CustomRadio.jsx";
+import {subjectTargets} from "../../../config/constants.js";
+
+const options = subjectTargets.map(item => ({
+  value: item.id,
+  label: item.target
+}));
 
 const SelectTarget = ({control, errors, defaultValue}) => {
-  const options = [
-    {label: '2', value: 2},
-    {label: '3', value: 3},
-    {label: '4', value: 4},
-    {label: '5', value: 5},
-  ];
-
   return (
     <InputWrapper
       title="Цель"

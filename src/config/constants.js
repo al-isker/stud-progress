@@ -1,14 +1,4 @@
-// тут должны быть запросы на сервер
-
-// const fetchPosts = async () => {
-//   console.time();
-//   const response = await fetch('https://jsonplaceholder.typicode.com/posts');
-//   const json = response.json();
-//   console.log('ready posts');
-//   console.timeEnd();
-// }
-
-export const subjectsFromDB = [
+export const subjectTitles = [
   { id: 0, title: 'Анатомия' },
   { id: 1, title: 'Биохимия' },
   { id: 2, title: 'Введение в специальность' },
@@ -22,10 +12,23 @@ export const subjectsFromDB = [
   { id: 10, title: 'Физическая культура' }
 ];
 
-export const typesFromDB = [
+export const subjectTypes = [
   { id: 0, type: 'экзамен' },
   { id: 1, type: 'диф зачёт' },
   { id: 2, type: 'зачёт' }
 ];
 
-// console.log(subjectsDatabase.sort((a, b) => a.localeCompare(b)))
+export const subjectTargets = [
+  {id: 0, target: 2},
+  {id: 1, target: 3},
+  {id: 2, target: 4},
+  {id: 3, target: 5},
+];
+
+export const subjectScores = [
+  {id: 0, score: 'нб'},
+  {id: 1, score: 2},
+  {id: 2, score: 3},
+  {id: 3, score: 4},
+  {id: 4, score: 5}
+];

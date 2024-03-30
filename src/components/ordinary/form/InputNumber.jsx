@@ -1,7 +1,7 @@
 import InputWrapper from "../inputWrapper/InputWrapper.jsx";
 import CustomInput from "../../ui/customInput/CustomInput.jsx";
 
-const InputTargetScore = ({control, errors, defaultValue}) => {
+const InputNumber = ({control, errors, defaultValue}) => {
   return (
     <InputWrapper
       title="Цель"
@@ -20,4 +20,4 @@ const InputTargetScore = ({control, errors, defaultValue}) => {
   );
 };
 
-export default InputTargetScore;
+export default InputNumber;

@@ -4,7 +4,7 @@ import MainContainer from "../../components/containers/mainContainer/MainContain
 import HeaderForm from "../../components/ordinary/headerForm/HeaderForm.jsx";
 import SelectTitle from "../../components/ordinary/form/SelectTitle.jsx";
 import SelectType from "../../components/ordinary/form/SelectType.jsx";
-import InputTargetScore from "../../components/ordinary/form/InputTargetScore.jsx";
+import InputNumber from "../../components/ordinary/form/InputNumber.jsx";
 import Button from "../../components/ui/button/Button.jsx";
 
 import './create-subject.scss';

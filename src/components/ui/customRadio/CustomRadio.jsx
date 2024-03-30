@@ -23,7 +23,7 @@ const CustomRadio = (props) => {
             required: {
               value: required ?? true,
               message: 'должен быть выбран один из вариантов'
-            }
+            },
           }}
 
           defaultValue={defaultValue === option.value}
