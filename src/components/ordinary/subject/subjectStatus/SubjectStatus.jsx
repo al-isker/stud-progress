@@ -1,10 +1,10 @@
 import './subject-status.scss';
 
-const SubjectStatus = ({className, rating}) => {
-  if (!rating.length) return null;
+const SubjectStatus = ({className, listScore}) => {
+  if (!listScore.length) return null;
 
-  const lastScore = rating.at(-1);
-  const averScore = rating.slice(0, -1).reduce((acc, n) => acc + n) / rating.slice(0, -1).length;
+  const lastScore = listScore.at(-1);
+  const averScore = listScore.slice(0, -1).reduce((acc, n) => acc + n) / listScore.slice(0, -1).length;
   const difference = lastScore - averScore;
 
   const status = {trend: null, icon: null}

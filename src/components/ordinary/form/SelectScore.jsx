@@ -1,10 +1,10 @@
 import InputWrapper from "../inputWrapper/InputWrapper.jsx";
 import CustomRadio from "../../ui/customRadio/CustomRadio.jsx";
-import {subjectScores} from '../../../config/constants.js';
+import {subjectScores} from '../../../config/subjectData.js';
 
 const options = subjectScores.map(item => ({
-  value: item.id,
-  label: item.score
+  value: item,
+  label: String(item)
 }));
 
 const SelectScore = ({control, errors}) => {

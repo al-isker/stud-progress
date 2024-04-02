@@ -9,22 +9,21 @@ import Button from "../../../ui/button/Button.jsx";
 
 import './subject.scss';
 
-const Subject = ({className, title, type, maxScore, rating}) => {
+const Subject = ({className, title, type, listScore}) => {
   return (
     <section className={(className ?? '') + ' subject'}>
       <SubjectTitle className="subject__title" title={title} />
       <SubjectType className="subject__type" type={type} />
-      <SubjectListScore className="subject__list-point" rating={rating} />
+      <SubjectListScore className="subject__list-point" listScore={listScore} />
 
       <div className="subject__average-score-status">
         <SubjectStatus
           className="subject__status"
-          rating={rating}
+          listScore={listScore}
         />
         <SubjectAverageScore
           className="subject__average-score"
-          maxScore={maxScore}
-          rating={rating}
+          listScore={listScore}
         />
       </div>
 

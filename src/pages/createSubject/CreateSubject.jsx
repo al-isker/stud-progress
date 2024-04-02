@@ -4,19 +4,17 @@ import MainContainer from "../../components/containers/mainContainer/MainContain
 import HeaderForm from "../../components/ordinary/headerForm/HeaderForm.jsx";
 import SelectTitle from "../../components/ordinary/form/SelectTitle.jsx";
 import SelectType from "../../components/ordinary/form/SelectType.jsx";
-import InputNumber from "../../components/ordinary/form/InputNumber.jsx";
+import SelectTarget from "../../components/ordinary/form/SelectTarget.jsx";
 import Button from "../../components/ui/button/Button.jsx";
+import subjectQuery from "../../queries/subjects.query.js";
 
 import './create-subject.scss';
-import SelectScore from "../../components/ordinary/form/SelectScore.jsx";
-import SelectTarget from "../../components/ordinary/form/SelectTarget.jsx";
 
 const CreateSubject = () => {
   const {control, formState: {errors}, handleSubmit} = useForm();
 
   const onSubmit = (data) => {
-    // отправка на сервер
-    console.log(data);
+    subjectQuery.create(data).then(console.log);
   }
 
   const onError = (data) => console.warn('form invalid', data, errors);

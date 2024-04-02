@@ -1,10 +1,10 @@
 import InputWrapper from "../inputWrapper/InputWrapper.jsx";
 import CustomRadio from "../../ui/customRadio/CustomRadio.jsx";
-import {subjectTargets} from "../../../config/constants.js";
+import {subjectTargets} from "../../../config/subjectData.js";
 
 const options = subjectTargets.map(item => ({
-  value: item.id,
-  label: item.target
+  value: item,
+  label: String(item)
 }));
 
 const SelectTarget = ({control, errors, defaultValue}) => {

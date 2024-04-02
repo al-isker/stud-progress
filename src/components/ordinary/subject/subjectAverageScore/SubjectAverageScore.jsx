@@ -1,17 +1,20 @@
 import './subject-average-score.scss';
 
-const SubjectAverageScore = ({className, maxScore, rating}) => {
-  if (!rating.length) return null;
+const SubjectAverageScore = ({className, listScore}) => {
+  if (!listScore.length) return null;
 
-  const averScore = rating.reduce((acc, n) => acc + n) / rating.length;
+  const averScore = listScore.reduce((acc, n) => acc + n) / listScore.length;
+  // const progress = averScore / maxScore * 100;
+  const progress = averScore * 20;
 
   return (
     <div
       className={className + ' subject-average-score'}
-      style={{'--progress': averScore / maxScore * 100 + '%'}}
+      style={{'--progress': progress + '%'}}
     >
       <div className="subject-average-score__value">
-        {averScore.toFixed(maxScore.toString().length === 1 ? 1 : 0)}
+        {/*{averScore.toFixed(maxScore.toString().length === 1 ? 1 : 0)}*/}
+        {averScore.toFixed(1)}
       </div>
     </div>
   );

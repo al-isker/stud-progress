@@ -1,10 +1,10 @@
 import InputWrapper from "../inputWrapper/InputWrapper.jsx";
 import CustomSelect from "../../ui/cusomSelect/CustomSelect.jsx";
-import {subjectTypes} from "../../../config/constants.js";
+import {subjectTypes} from "../../../config/subjectData.js";
 
 const typeOptions = subjectTypes.map(item => ({
-  value: item.id,
-  label: item.type
+  value: String(item),
+  label: String(item)
 }));
 
 const SelectType = ({control, errors, defaultValue}) => {
