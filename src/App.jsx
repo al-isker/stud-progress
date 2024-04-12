@@ -16,25 +16,21 @@ import History from "./pages/history/History.jsx";
 import NotFound from "./pages/notFound/NotFound.jsx";
 
 function App() {
-  const location = useLocation();
-
   return (
-    <AnimatePresence>
-      <Routes location={location} key={location.key}>
-        <Route path="/" element={<Layout/>}>
-          <Route path="home/" element={null}>
-            <Route index element={<Home/>} />
-            <Route path="subject/add-point" element={<AddScore/>} />
-            <Route path="subject/edit" element={<EditSubject/>} />
-            <Route path="create-subject" element={<CreateSubject/>} />
-          </Route>
-          <Route path="stat" element={<Stat/>} />
-          <Route path="rec" element={<Rec/>} />
-          <Route path="history" element={<History/>} />
-          <Route path="*" element={<NotFound/>} />
+    <Routes>
+      <Route path="/" element={<Layout/>}>
+        <Route path="home/" element={null}>
+          <Route index element={<Home/>} />
+          <Route path="subjects/:subjectId/add-point" element={<AddScore/>} />
+          <Route path="subjects/:subjectId/edit" element={<EditSubject/>} />
+          <Route path="subjects/create-subject" element={<CreateSubject/>} />
         </Route>
-      </Routes>
-    </AnimatePresence>
+        <Route path="stat" element={<Stat/>} />
+        <Route path="rec" element={<Rec/>} />
+        <Route path="history" element={<History/>} />
+        <Route path="*" element={<NotFound/>} />
+      </Route>
+    </Routes>
   );
 }
 

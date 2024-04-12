@@ -23,7 +23,7 @@ const CustomSelect = ({control, name, required, placeholder, options, defaultVal
           inputId={name}
           options={options}
           placeholder={placeholder ?? 'выбрать...'}
-          defaultValue={options[defaultValue]}
+          defaultValue={options.find(item => item.label === defaultValue)}
 
           value={value?.label}
           onChange={newValue => onChange(newValue['value'])}

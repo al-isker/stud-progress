@@ -1,14 +1,14 @@
-import MainContainer from "../../components/containers/mainContainer/MainContainer.jsx";
+import MainWrapper from "../../components/containers/mainContainer/MainWrapper.jsx";
 
 import './not-found.scss';
 
 const NotFound = () => {
   return (
-    <MainContainer>
+    <MainWrapper>
       <div>
         Not Found
       </div>
-    </MainContainer>
+    </MainWrapper>
   );
 };
 

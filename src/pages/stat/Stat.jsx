@@ -1,14 +1,14 @@
-import MainContainer from "../../components/containers/mainContainer/MainContainer.jsx";
+import MainWrapper from "../../components/containers/mainContainer/MainWrapper.jsx";
 
 import './stat.scss';
 
 const Stat = () => {
   return (
-    <MainContainer>
+    <MainWrapper>
       <div>
         Statistics
       </div>
-    </MainContainer>
+    </MainWrapper>
   );
 };
 

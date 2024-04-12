@@ -1,0 +1,27 @@
+@import "../../../styles/colors";
+
+.error {
+  padding-top: 1.4em;
+
+  &__message {
+    font-size: 1.1em;
+
+    & > span {
+
+      color: $red;
+    }
+  }
+
+
+  &__settings {
+    max-width: 420px;
+    margin-top: 12px;
+    display: flex;
+    gap: 8px;
+  }
+
+  &__btn {
+    font-size: 16px;
+    height: 24px;
+  }
+}

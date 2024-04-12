@@ -1,0 +1,10 @@
+@import "../../../styles/colors";
+
+.linear-loading {
+  //position: absolute;
+  //top: 0;
+
+  height: 3px;
+  overflow: hidden;
+  color: $main-color;
+}

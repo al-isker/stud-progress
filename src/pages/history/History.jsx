@@ -1,14 +1,14 @@
-import MainContainer from "../../components/containers/mainContainer/MainContainer.jsx";
+import MainWrapper from "../../components/containers/mainContainer/MainWrapper.jsx";
 
 import './history.scss';
 
 const History = () => {
   return (
-    <MainContainer>
+    <MainWrapper>
       <div>
         History
       </div>
-    </MainContainer>
+    </MainWrapper>
   );
 };
 

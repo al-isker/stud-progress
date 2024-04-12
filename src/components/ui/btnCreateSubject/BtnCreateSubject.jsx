@@ -17,7 +17,7 @@ const BtnCreateSubject = ({className}) => {
     >
       <Link
         className="btn-create-subject__link"
-        to="create-subject"
+        to="subjects/create-subject"
       >
         <p className="btn-create-subject__text">Создать предмет</p>
         <span className="btn-create-subject__icon material-symbols-outlined">

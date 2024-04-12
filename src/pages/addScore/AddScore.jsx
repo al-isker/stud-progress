@@ -1,14 +1,11 @@
 import {useForm} from "react-hook-form";
 
-import DatePicker from "react-datepicker";
-
-import MainContainer from "../../components/containers/mainContainer/MainContainer.jsx";
+import MainWrapper from "../../components/containers/mainContainer/MainWrapper.jsx";
 import HeaderForm from "../../components/ordinary/headerForm/HeaderForm.jsx";
 import SelectScore from "../../components/ordinary/form/SelectScore.jsx";
 import Button from "../../components/ui/button/Button.jsx";
 
 import './add-score.scss';
-import {useState} from "react";
 
 const CreateSubject = () => {
   const {control, formState: {errors}, handleSubmit} = useForm();
@@ -20,10 +17,8 @@ const CreateSubject = () => {
 
   const onError = (data) => console.warn('form invalid', data, errors);
 
-  const [date, setDate] = useState(new Date());
-
   return (
-    <MainContainer className="add-score">
+    <MainWrapper className="add-score">
       <HeaderForm
         backTo="/home"
         title="Добавить балл"
@@ -34,7 +29,6 @@ const CreateSubject = () => {
         onSubmit={handleSubmit(onSubmit, onError)}
       >
         <SelectScore control={control} errors={errors} />
-        {/*<DatePicker />*/}
 
         <Button
           className="add-score__submit"
@@ -43,7 +37,7 @@ const CreateSubject = () => {
           icon="keep"
         />
       </form>
-    </MainContainer>
+    </MainWrapper>
   );
 };
 

@@ -1,39 +1,37 @@
-import {useState, useEffect} from "react";
-
-import MainContainer from "../../components/containers/mainContainer/MainContainer.jsx";
-import Subject from "../../components/ordinary/subject/subject/Subject.jsx";
+import MainWrapper from "../../components/containers/mainContainer/MainWrapper.jsx";
+import Subject from "../../components/smart/subject/subject/Subject.jsx";
 import BtnCreateSubject from "../../components/ui/btnCreateSubject/BtnCreateSubject.jsx";
-
+import Error from "../../components/ordinary/error/Error.jsx";
 import subjectQuery from "../../queries/subjects.query.js";
 
 import './home.scss';
 
 const Home = () => {
-  const [subjects, setSubjects] = useState('loading');
+  const {
+    isPending,
+    error: queryError,
+    data,
+    refetch
+  } = subjectQuery.useGetAll();
 
-  useEffect(() => {
-    subjectQuery.getAll().then(data => setSubjects(data));
-  }, []);
 
-
-  if(subjects === 'loading') return (
-    <div>loading...</div>
-  );
+  if (queryError) return <Error message={queryError?.message} refresh={refetch} />;
 
   return (
-    <MainContainer className="home">
-      {subjects.map(subject => (
+    <MainWrapper className="home" isPending={isPending}>
+      {data && <>
+        {data.map(subject => (
           <Subject
             key={subject.id}
+            id={subject.id}
             title={subject.title}
             type={subject.type}
             listScore={subject.listScore}
           />
-        )
-      )}
-
-      <BtnCreateSubject className="home__btn-create-subject"/>
-    </MainContainer>
+        ))}
+        <BtnCreateSubject className="home__btn-create-subject"/>
+      </>}
+    </MainWrapper>
   );
 };
 

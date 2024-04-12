@@ -1,14 +1,14 @@
-import MainContainer from "../../components/containers/mainContainer/MainContainer.jsx";
+import MainWrapper from "../../components/containers/mainContainer/MainWrapper.jsx";
 
 import './rec.scss';
 
 const Rec = () => {
   return (
-    <MainContainer>
+    <MainWrapper>
       <div>
         Recommendation
       </div>
-    </MainContainer>
+    </MainWrapper>
   );
 };
 

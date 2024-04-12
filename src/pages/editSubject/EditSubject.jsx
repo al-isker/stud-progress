@@ -1,58 +1,77 @@
+import {useParams} from "react-router-dom";
 import {useForm} from "react-hook-form";
 
-import MainContainer from "../../components/containers/mainContainer/MainContainer.jsx";
+import Error from "../../components/ordinary/error/Error.jsx";
+import MainWrapper from "../../components/containers/mainContainer/MainWrapper.jsx";
 import HeaderForm from "../../components/ordinary/headerForm/HeaderForm.jsx";
 import SelectTitle from "../../components/ordinary/form/SelectTitle.jsx";
 import SelectType from "../../components/ordinary/form/SelectType.jsx";
 import SelectTarget from "../../components/ordinary/form/SelectTarget.jsx";
 import Button from "../../components/ui/button/Button.jsx";
+import subjectsQuery from "../../queries/subjects.query.js";
 
 import './edit-subject.scss';
 
 const EditSubject = () => {
-  // забираем информацию о subject
-  const subject = {
-    title: 3,
-    type: 1,
-    target: 4,
-    listScore: [3, 4, 2, 3]
-  };
+  const params = useParams();
 
-  const {control, formState: {errors}, handleSubmit} = useForm({
-    defaultValues: subject
-  });
+  const {
+    isPending,
+    error: queryError,
+    data,
+    refetch
+  } = subjectsQuery.useGetById(params.subjectId);
 
-  const onSubmit = (data) => {
-    // отправка на сервер
-    console.log(data);
-  }
+  const onSubmit = (data) => console.log(data);
+  const onError = (data) => console.warn('form invalid', data);
 
-  const onError = (data) => console.warn('form invalid', data, errors);
+
+  if (queryError) return <Error message={queryError?.message} refresh={refetch}/>;
 
   return (
-    <MainContainer className="edit-subject">
-      <HeaderForm
-        backTo="/home"
-        title="Редактировать предмет"
-      />
-
-      <form
-        className="create-subject__form"
-        onSubmit={handleSubmit(onSubmit, onError)}
-      >
-        <SelectTitle control={control} errors={errors} defaultValue={subject.title}/>
-        <SelectType control={control} errors={errors} defaultValue={subject.type} />
-        <SelectTarget control={control} errors={errors} defaultValue={subject.target} />
-
-        <Button
-          className="create-subject__submit"
-          type="submit"
-          title="сохранить"
-          icon="keep"
+    <MainWrapper className="edit-subject" isPending={isPending}>
+      {data && (
+        <EditSubjectForm
+          defaultValues={data}
+          onSubmit={onSubmit}
+          onError={onError}
         />
-      </form>
-    </MainContainer>
+      )}
+    </MainWrapper>
   );
 };
+
+
+const EditSubjectForm = ({defaultValues, onSubmit, onError}) => {
+  const {
+    control,
+    formState: {errors: formError},
+    handleSubmit
+  } = useForm({defaultValues});
+
+  return <>
+    <HeaderForm
+      backTo="/home"
+      title="Редактировать предмет"
+    />
+
+    <form
+      className="create-subject__form"
+      onSubmit={handleSubmit(onSubmit, onError)}
+    >
+      <SelectTitle control={control} errors={formError} defaultValue={defaultValues.title}/>
+      <SelectType control={control} errors={formError} defaultValue={defaultValues.type}/>
+      <SelectTarget control={control} errors={formError} defaultValue={defaultValues.target}/>
+
+      <Button
+        className="create-subject__submit"
+        type="submit"
+        title="сохранить"
+        icon="keep"
+      />
+    </form>
+  </>;
+};
+
 
 export default EditSubject;

@@ -9,7 +9,7 @@ import Button from "../../../ui/button/Button.jsx";
 
 import './subject.scss';
 
-const Subject = ({className, title, type, listScore}) => {
+const Subject = ({className, id, title, type, listScore}) => {
   return (
     <section className={(className ?? '') + ' subject'}>
       <SubjectTitle className="subject__title" title={title} />
@@ -28,10 +28,10 @@ const Subject = ({className, title, type, listScore}) => {
       </div>
 
       <div className="subject__settings">
-        <Link to="subject/edit" className="subject__link">
+        <Link to={`subjects/${id}/edit`} className="subject__link">
           <Button title="редактировать" icon="edit" />
         </Link>
-        <Link to="subject/add-point" className="subject__link">
+        <Link to={`subjects/${id}/add-point`} className="subject__link">
           <Button title="добавить балл" icon="data_saver_on" />
         </Link>
       </div>
