@@ -2,8 +2,7 @@ import './styles/reset.css';
 import './styles/common.scss';
 import './styles/container.scss';
 
-import {Routes, Route, useLocation} from "react-router-dom";
-import {AnimatePresence} from "framer-motion";
+import {Routes, Route} from "react-router-dom";
 
 import Layout from "./components/containers/layout/Layout.jsx";
 import Home from "./pages/home/Home.jsx";

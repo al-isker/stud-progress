@@ -1,11 +1,9 @@
-import {Link} from "react-router-dom";
-
 import SubjectTitle from "../subjectTitle/SubjectTitle.jsx";
 import SubjectType from "../subjectType/SubjectType.jsx";
 import SubjectListScore from "../subjectListScore/SubjectListScore.jsx";
 import SubjectStatus from "../subjectStatus/SubjectStatus.jsx";
 import SubjectAverageScore from "../subjectAverageScore/SubjectAverageScore.jsx";
-import Button from "../../../ui/button/Button.jsx";
+import SubjectSettings from "../subjectSettings/SubjectSettings.jsx";
 
 import './subject.scss';
 
@@ -27,14 +25,7 @@ const Subject = ({className, id, title, type, listScore}) => {
         />
       </div>
 
-      <div className="subject__settings">
-        <Link to={`subjects/${id}/edit`} className="subject__link">
-          <Button title="редактировать" icon="edit" />
-        </Link>
-        <Link to={`subjects/${id}/add-point`} className="subject__link">
-          <Button title="добавить балл" icon="data_saver_on" />
-        </Link>
-      </div>
+      <SubjectSettings className="subject__settings" id={id} />
     </section>
   );
 };

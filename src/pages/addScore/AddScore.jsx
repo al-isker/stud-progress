@@ -1,6 +1,6 @@
 import {useForm} from "react-hook-form";
 
-import MainWrapper from "../../components/containers/mainContainer/MainWrapper.jsx";
+import MainWrapper from "../../components/containers/mainWrapper/MainWrapper.jsx";
 import HeaderForm from "../../components/ordinary/headerForm/HeaderForm.jsx";
 import SelectScore from "../../components/ordinary/form/SelectScore.jsx";
 import Button from "../../components/ui/button/Button.jsx";

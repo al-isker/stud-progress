@@ -1,19 +1,23 @@
 import './button.scss';
 
-const Button = ({className, title, icon, type, onClick, disabled}) => {
+const Button = ({className="", title, icon, type, onClick, disabled}) => {
   return (
     <button
-      className={(className ?? '') + ' button'}
+      className={'button' + ' ' + className}
       type={type ?? 'button'}
       onClick={onClick}
       disabled={disabled}
     >
-      <span className="button__title">
-        {title}
-      </span>
-      <span className="button__icon material-symbols-outlined">
-        {icon}
-      </span>
+      {title && (
+        <span className="button__title">
+          {title}
+        </span>
+      )}
+      {icon && (
+        <span className="button__icon material-symbols-outlined">
+          {icon}
+        </span>
+      )}
     </button>
   );
 };

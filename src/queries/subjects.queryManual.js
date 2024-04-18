@@ -22,9 +22,7 @@ class subjectQuery {
       const response = await fetch(API + '/subjects', {
         method: 'POST',
         body: JSON.stringify(newSubject),
-        headers: {
-          'Content-Type': 'application/json'
-        }
+        headers: {'Content-Type': 'application/json'}
       });
 
       if(!response.ok) {

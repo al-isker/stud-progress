@@ -18,8 +18,6 @@ export const subjectTitles = [
   'Экономика'
 ];
 
-console.log(subjectTitles.sort());
-
 export const subjectTypes = [
   'экзамен',
   'диф зачёт',

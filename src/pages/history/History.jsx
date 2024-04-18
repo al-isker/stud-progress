@@ -1,4 +1,4 @@
-import MainWrapper from "../../components/containers/mainContainer/MainWrapper.jsx";
+import MainWrapper from "../../components/containers/mainWrapper/MainWrapper.jsx";
 
 import './history.scss';
 

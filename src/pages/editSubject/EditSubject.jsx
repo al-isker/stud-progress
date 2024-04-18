@@ -1,35 +1,35 @@
 import {useParams} from "react-router-dom";
 import {useForm} from "react-hook-form";
+import useQuerySubject from '../../queries/subjects.query.js';
 
 import Error from "../../components/ordinary/error/Error.jsx";
-import MainWrapper from "../../components/containers/mainContainer/MainWrapper.jsx";
+import MainWrapper from "../../components/containers/mainWrapper/MainWrapper.jsx";
 import HeaderForm from "../../components/ordinary/headerForm/HeaderForm.jsx";
 import SelectTitle from "../../components/ordinary/form/SelectTitle.jsx";
 import SelectType from "../../components/ordinary/form/SelectType.jsx";
 import SelectTarget from "../../components/ordinary/form/SelectTarget.jsx";
 import Button from "../../components/ui/button/Button.jsx";
-import subjectsQuery from "../../queries/subjects.query.js";
 
 import './edit-subject.scss';
 
 const EditSubject = () => {
-  const params = useParams();
+  const {subjectId} = useParams();
 
   const {
-    isPending,
-    error: queryError,
+    isPending: isPendingGet,
+    error: errorGet,
     data,
-    refetch
-  } = subjectsQuery.useGetById(params.subjectId);
+    refetchGet
+  } = useQuerySubject.getById(subjectId);
 
   const onSubmit = (data) => console.log(data);
   const onError = (data) => console.warn('form invalid', data);
 
 
-  if (queryError) return <Error message={queryError?.message} refresh={refetch}/>;
+  if (errorGet) return <Error message={errorGet?.message} refresh={refetchGet}/>;
 
   return (
-    <MainWrapper className="edit-subject" isPending={isPending}>
+    <MainWrapper className="edit-subject" isPending={isPendingGet}>
       {data && (
         <EditSubjectForm
           defaultValues={data}
