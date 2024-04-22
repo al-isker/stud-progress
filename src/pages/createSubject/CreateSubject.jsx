@@ -29,8 +29,8 @@ const CreateSubject = () => {
     }
   }, [isPostSuccess]);
 
-  const onSubmit = useCallback(() => {
-    return async (data) => mutate(data);
+  const onSubmit = useCallback((data) => {
+    mutate(data);
   }, []);
 
   if (postError) return <Error message={postError?.message} refresh={onSubmit}/>;
