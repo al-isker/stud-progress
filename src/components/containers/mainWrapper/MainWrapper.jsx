@@ -21,7 +21,7 @@ const MainWrapper = ({children, className="", isPending, isVisible=true}) => {
     <main className="main-wrapper">
       {isPending && (
         <div className="main-wrapper__linear-loading">
-          <LinearProgress color="inherit"/>
+          <LinearProgress color="inherit" />
         </div>
       )}
       {isVisible && (

@@ -31,9 +31,9 @@ const CustomRadio = (props) => {
 
           render={({field}) => (
             <label className={
-              field.value == option.value ?
-                'custom-radio__btn custom-radio__btn_active' :
-                'custom-radio__btn'
+              'custom-radio__btn' +
+              (field.value == option.value ? ' custom-radio__btn_active' : '') +
+              (isDisabled ? ' custom-radio__btn_disabled' : '')
             }>
               <input
                 className="custom-radio__input"

@@ -1,3 +1,5 @@
+import {useCallback, useEffect} from "react";
+import {useNavigate} from "react-router-dom";
 import {useForm} from "react-hook-form";
 import useQuerySubject from '../../queries/subjects.query.js';
 
@@ -10,28 +12,31 @@ import SelectTarget from "../../components/ordinary/form/SelectTarget.jsx";
 import Button from "../../components/ui/button/Button.jsx";
 
 import './create-subject.scss';
-import {useEffect, useState} from "react";
 
 const CreateSubject = () => {
-  const {isPending: isPostPending, mutate, error: postError} = useQuerySubject.create();
+  const {
+    isPending: isPostPending,
+    mutate,
+    isSuccess: isPostSuccess,
+    error: postError
+  } = useQuerySubject.create();
 
-  const [switcher, setSwitcher] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
-    setTimeout(() => {
-      setSwitcher(!switcher);
-    }, 500);
-  }, [switcher]);
+    if(isPostSuccess) {
+      navigate('/home');
+    }
+  }, [isPostSuccess]);
 
-  const onSubmit = (data) => {
-    mutate(data);
-    // переходНаРоут("/home");
-  }
+  const onSubmit = useCallback(() => {
+    return async (data) => mutate(data);
+  }, []);
 
   if (postError) return <Error message={postError?.message} refresh={onSubmit}/>;
 
   return (
-    <MainWrapper className="create-subject" isPending={switcher && !isPostPending}>
+    <MainWrapper className="create-subject" isPending={isPostPending}>
       <CreateSubjectForm onSubmit={onSubmit} isDisabled={isPostPending} />
     </MainWrapper>
   );
