@@ -3,7 +3,7 @@ import {LinearProgress} from "@mui/material";
 
 import './main-wrapper.scss';
 
-const MainWrapper = ({children, className="", isPending}) => {
+const MainWrapper = ({children, className="", isPending, isVisible=true}) => {
   const transition = {
     initial: {
       x: '-10vw',
@@ -18,13 +18,13 @@ const MainWrapper = ({children, className="", isPending}) => {
   };
 
   return (
-    <main>
+    <main className="main-wrapper">
       {isPending && (
-        <div className="linear-loading">
+        <div className="main-wrapper__linear-loading">
           <LinearProgress color="inherit"/>
         </div>
       )}
-      {!isPending && (
+      {isVisible && (
         <motion.div
           className={className + ' container'}
           style={{paddingTop: '1.4em'}}

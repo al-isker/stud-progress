@@ -7,7 +7,7 @@ const typeOptions = subjectTypes.map(item => ({
   label: String(item)
 }));
 
-const SelectType = ({control, errors, defaultValue}) => {
+const SelectType = ({control, errors, isDisabled, defaultValue}) => {
   return (
     <InputWrapper
       title="Тип сдачи"
@@ -18,6 +18,7 @@ const SelectType = ({control, errors, defaultValue}) => {
         control={control}
         name="type"
         options={typeOptions}
+        idDisabled={isDisabled}
         defaultValue={defaultValue}
       />
     </InputWrapper>

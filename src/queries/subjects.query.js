@@ -17,9 +17,9 @@ class useQuerySubject {
     enabled: Boolean(subjectId)
   });
 
-  post = (newSubject) => useMutation({
+  create = () => useMutation({
     mutationKey: ['subjects'],
-    mutationFn: async () => axios.post(`${API}/subjects`, newSubject)
+    mutationFn: async (newSubject) => axios.post(`${API}/subjects`, newSubject)
   });
 }
 

@@ -7,7 +7,7 @@ const options = subjectTargets.map(item => ({
   label: String(item)
 }));
 
-const SelectTarget = ({control, errors, defaultValue}) => {
+const SelectTarget = ({control, errors, isDisabled, defaultValue}) => {
   return (
     <InputWrapper
       title="Цель"
@@ -17,6 +17,7 @@ const SelectTarget = ({control, errors, defaultValue}) => {
         control={control}
         name="target"
         options={options}
+        isDisabled={isDisabled}
         defaultValue={defaultValue}
       />
     </InputWrapper>

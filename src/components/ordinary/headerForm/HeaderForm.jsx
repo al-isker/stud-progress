@@ -4,12 +4,12 @@ import './header-form.scss';
 
 const HeaderForm = ({className="", backTo="", title}) => {
   return (
-    <header className={className + ' header-inner-page'}>
+    <header className={className + ' header-form'}>
       <BtnBack
-        className="header-inner-page__btn-back"
+        className="header-form__btn-back"
         to={backTo}
       />
-      <h2 className="header-inner-page__title">
+      <h2 className="header-form__title">
         {title}
       </h2>
     </header>

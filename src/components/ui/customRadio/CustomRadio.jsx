@@ -8,6 +8,7 @@ const CustomRadio = (props) => {
     name,
     required,
     options,
+    isDisabled,
     defaultValue
   } = props;
 
@@ -38,8 +39,9 @@ const CustomRadio = (props) => {
                 className="custom-radio__input"
                 type="radio"
                 value={option.value}
-                checked={field.value == option.value}
                 onChange={field.onChange}
+                checked={field.value == option.value}
+                disabled={isDisabled}
               />
               {option.label}
             </label>

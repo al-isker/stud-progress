@@ -1,4 +1,3 @@
-// добавить недостающие предметы из MockAPI
 export const subjectTitles = [
   'Анатомия',
   'Биология',

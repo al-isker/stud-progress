@@ -10,15 +10,16 @@ import './home.scss';
 const Home = () => {
   const {
     isPending,
-    error: queryError,
+    error,
     data,
+    isSuccess,
     refetch
   } = useQuerySubject.getAll();
 
-  if (queryError) return <Error message={queryError?.message} refresh={refetch} />;
+  if (error) return <Error message={error?.message} refresh={refetch} />;
 
   return (
-    <MainWrapper className="home" isPending={isPending}>
+    <MainWrapper className="home" isPending={isPending} isVisible={isSuccess}>
       {data && <>
         {data.map(subject => (
           <Subject

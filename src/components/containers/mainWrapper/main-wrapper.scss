@@ -1,7 +1,14 @@
 @import "../../../styles/colors";
 
-.linear-loading {
-  height: 3px;
-  overflow: hidden;
-  color: $main-color;
+.main-wrapper {
+
+  &__linear-loading {
+    color: $main-color;
+    transform: scaleY(0.75) translateY(-2px);
+
+    & > span {
+      position: relative;
+      top: 0;
+    }
+  }
 }
