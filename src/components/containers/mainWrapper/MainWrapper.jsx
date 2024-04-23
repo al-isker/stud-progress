@@ -1,21 +1,24 @@
-import {motion} from "framer-motion";
+import {useMemo} from 'react';
+import {motion} from "framer-motion";``
 import {LinearProgress} from "@mui/material";
 
 import './main-wrapper.scss';
 
 const MainWrapper = ({children, className="", isPending, isVisible=true}) => {
-  const transition = {
-    initial: {
-      x: '-10vw',
-    },
-    animate: {
-      x: '0',
-      transition: {
-        type: "spring",
-        mass: 0.4,
+  const transition = useMemo(() => {
+    return {
+      initial: {
+        x: '-12vw',
       },
-    }
-  };
+      animate: {
+        x: '0',
+        transition: {
+          type: "spring",
+          mass: 0.3,
+        },
+      }
+    };
+  }, []);
 
   return (
     <main className="main-wrapper">
