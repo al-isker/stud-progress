@@ -4,7 +4,7 @@ import {LinearProgress} from "@mui/material";
 
 import './main-wrapper.scss';
 
-const MainWrapper = ({children, className="", isPending, isVisible=true}) => {
+const MainWrapper = ({children, className="", isPending, isVisible}) => {
   const transition = useMemo(() => {
     return {
       initial: {
@@ -27,7 +27,7 @@ const MainWrapper = ({children, className="", isPending, isVisible=true}) => {
           <LinearProgress color="inherit" />
         </div>
       )}
-      {isVisible && (
+      {(isVisible ?? true) && (
         <motion.div
           className={className + ' container'}
           style={{paddingTop: '1.4em'}}

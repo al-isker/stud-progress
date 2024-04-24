@@ -10,17 +10,22 @@ class useQuerySubject {
     select: ({data}) => data
   });
 
-  getById = (subjectId) => useQuery({
-    queryKey: ['subjects', subjectId],
-    queryFn: async () => axios.get(`${API}/subjects/${subjectId}`),
+  getById = (id) => useQuery({
+    queryKey: ['subjects', id],
+    queryFn: async () => axios.get(`${API}/subjects/${id}`),
     select: ({data}) => data,
-    enabled: Boolean(subjectId)
+    enabled: Boolean(id)
   });
 
   create = () => useMutation({
     mutationKey: ['subjects'],
     mutationFn: async (newSubject) => axios.post(`${API}/subjects`, newSubject)
   });
+
+  delete = () => useMutation({
+    mutationKey: ['subjects'],
+    mutationFn: async (id) => axios.delete(`${API}/subjects/${id}`)
+  })
 }
 
 

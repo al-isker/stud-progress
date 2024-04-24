@@ -1,11 +1,10 @@
 import {Link} from "react-router-dom";
+
 import Button from "../../../ui/button/Button.jsx";
 
 import './subject-settings.scss';
-import ModalDelete from "../../../ordinary/modalDelete/ModalDelete.jsx";
-import {useState} from "react";
 
-const SubjectSettings = ({className, id}) => {
+const SubjectSettings = ({className, id, onDelete}) => {
   return (
     <div className={className + ' subject-settings'}>
       <Link
@@ -22,35 +21,13 @@ const SubjectSettings = ({className, id}) => {
         <Button title="добавить балл" icon="data_saver_on"/>
       </Link>
 
-      <BtnDeleteSubject className="subject-settings__btn-delete" />
+      <Button
+        className="subject-settings__btn-delete"
+        icon="delete"
+        onClick={onDelete}
+      />
     </div>
   );
 };
-
-
-const BtnDeleteSubject = ({className}) => {
-  const [isModal, setIsModal] = useState(false);
-
-  const handleClickDelete = () => {
-    console.log('click delete subject');
-  }
-
-  return (
-    <>
-      <Button
-        className={className}
-        icon="delete"
-        onClick={() => setIsModal(true)}
-      />
-      <ModalDelete
-        content="Вы уверены, что хотите удалить предмет?"
-        isVisible={isModal}
-        onCancel={() => setIsModal(false)}
-        onDelete={handleClickDelete}
-      />
-    </>
-  )
-}
-
 
 export default SubjectSettings;

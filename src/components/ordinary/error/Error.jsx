@@ -4,7 +4,7 @@ import {support} from "../../../config/API.js";
 import '../../../styles/container.scss';
 import './error.scss';
 
-const Error = ({message, refresh}) => {
+const Error = ({message, buttons}) => {
 
   return (
     <div className="error container">
@@ -14,11 +14,13 @@ const Error = ({message, refresh}) => {
       </div>
 
       <div className="error__settings">
-        <Button
-          className="error__btn"
-          title="обновить"
-          onClick={refresh}
-        />
+        {buttons.map(btn => (
+          <Button
+            className="error__btn"
+            title={btn.title}
+            onClick={btn.onClick}
+          />
+        ))}
         <Button
           className="error__btn"
           title="тех поддержка"

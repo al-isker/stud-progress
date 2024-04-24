@@ -3,7 +3,7 @@ import {useNavigate} from "react-router-dom";
 import {useForm} from "react-hook-form";
 import useQuerySubject from '../../queries/subjects.query.js';
 
-import Error from "../../components/ordinary/error/Error.jsx";
+import ErrorPost from "../../components/ordinary/error/ErrorPost.jsx";
 import MainWrapper from "../../components/containers/mainWrapper/MainWrapper.jsx";
 import HeaderForm from "../../components/ordinary/headerForm/HeaderForm.jsx";
 import SelectTitle from "../../components/ordinary/form/SelectTitle.jsx";
@@ -33,7 +33,12 @@ const CreateSubject = () => {
     mutate(data);
   }, []);
 
-  if (postError) return <Error message={postError?.message} refresh={onSubmit}/>;
+  if (postError) return (
+    <ErrorPost
+      message={postError?.message}
+      back={() => navigate('/home')}
+    />
+  );
 
   return (
     <MainWrapper className="create-subject" isPending={isPostPending}>

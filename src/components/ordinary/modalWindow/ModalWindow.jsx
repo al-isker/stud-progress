@@ -1,15 +1,27 @@
-import {useRef} from "react";
+import {useCallback, useRef} from "react";
 import {AnimatePresence, motion} from "framer-motion";
 
 import Button from "../../ui/button/Button.jsx";
 
-import './modal-delete.scss';
+import './modal-window.scss';
 
-const ModalDelete = ({content, isVisible, onCancel, onDelete}) => {
+const ModalWindow = (props) => {
+  const {
+    icon,
+    content,
+    isVisible,
+    setIsVisible,
+    resolveTitle,
+    onResolve,
+    isDisabled
+  } = props;
+
   const wrapperRef = useRef(0);
 
-  const handleKeyDown = (e) => e.key === 'Escape' && onCancel();
-  const handleClick = (e) => e.target === wrapperRef.current && onCancel();
+  const close = () => setIsVisible(false);
+
+  const handleKeyDown = (e) => e.key === 'Escape' && close();
+  const handleClick = (e) => e.target === wrapperRef.current && close();
 
   return <>
     <AnimatePresence>
@@ -37,18 +49,20 @@ const ModalDelete = ({content, isVisible, onCancel, onDelete}) => {
           className="modal-delete"
           onKeyDown={handleKeyDown}
         >
-          <div className="modal-delete__icon material-symbols-outlined">delete</div>
+          <div className="modal-delete__icon material-symbols-outlined">{icon}</div>
 
           <p className="modal-delete__content">{content}</p>
 
           <div className="modal-delete__control">
             <Button
               title="отмена"
-              onClick={onCancel}
+              onClick={close}
+              disabled={isDisabled}
             />
             <Button
-              title="удалить"
-              onClick={onDelete}
+              title={resolveTitle}
+              onClick={onResolve}
+              disabled={isDisabled}
             />
           </div>
         </motion.div>
@@ -57,4 +71,4 @@ const ModalDelete = ({content, isVisible, onCancel, onDelete}) => {
   </>;
 };
 
-export default ModalDelete;
+export default ModalWindow;
