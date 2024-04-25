@@ -1,4 +1,4 @@
-import {useCallback, useRef} from "react";
+import {useEffect, useRef} from "react";
 import {AnimatePresence, motion} from "framer-motion";
 
 import Button from "../../ui/button/Button.jsx";
@@ -10,17 +10,26 @@ const ModalWindow = (props) => {
     icon,
     content,
     isVisible,
-    setIsVisible,
+    close,
     resolveTitle,
     onResolve,
     isDisabled
   } = props;
 
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if(e.key === "Escape") close();
+    }
+
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    }
+  }, []);
+
   const wrapperRef = useRef(0);
 
-  const close = () => setIsVisible(false);
-
-  const handleKeyDown = (e) => e.key === 'Escape' && close();
   const handleClick = (e) => e.target === wrapperRef.current && close();
 
   return <>
@@ -45,14 +54,10 @@ const ModalWindow = (props) => {
           initial={{opacity: 0}}
           animate={{opacity: 1}}
           exit={{opacity: 0}}
-
           className="modal-delete"
-          onKeyDown={handleKeyDown}
         >
           <div className="modal-delete__icon material-symbols-outlined">{icon}</div>
-
           <p className="modal-delete__content">{content}</p>
-
           <div className="modal-delete__control">
             <Button
               title="отмена"

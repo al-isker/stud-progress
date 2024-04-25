@@ -1,17 +1,14 @@
-import {useState} from "react";
+import {Outlet} from "react-router-dom";
 import useQuerySubject from "../../queries/subjects.query.js";
 
-import ErrorGet from "../../components/ordinary/error/ErrorGet.jsx";
+import ErrorRefetch from "../../components/ordinary/error/ErrorRefetch.jsx";
 import MainWrapper from "../../components/containers/mainWrapper/MainWrapper.jsx";
 import Subject from "../../components/smart/subject/subject/Subject.jsx";
 import BtnCreateSubject from "../../components/ui/btnCreateSubject/BtnCreateSubject.jsx";
-import ModalDeleteSubject from "../../components/ordinary/modalWindow/ModalDeleteSubject.jsx";
 
-import './home.scss';
+import './subjects.scss';
 
-const Home = () => {
-  const [deleteId, setDeleteId] = useState(false);
-
+const Subjects = () => {
   const {
     isPending,
     error,
@@ -20,10 +17,11 @@ const Home = () => {
     refetch
   } = useQuerySubject.getAll();
 
-  if (error) return <ErrorGet message={error?.message} refetch={refetch} />;
+  if (error) return <ErrorRefetch message={error?.message} refetch={refetch} />;
 
   return <>
-    <MainWrapper className="home" isPending={isPending} isVisible={isSuccess}>
+    <Outlet />
+    <MainWrapper className="subjects" isPending={isPending} isVisible={isSuccess}>
       {subjects && <>
         {subjects.map(subject => (
           <Subject
@@ -32,19 +30,12 @@ const Home = () => {
             title={subject.title}
             type={subject.type}
             listScore={subject.listScore}
-            onDelete={() => setDeleteId(subject.id)}
           />
         ))}
-        <BtnCreateSubject className="home__btn-create-subject"/>
+        <BtnCreateSubject className="subjects__btn-create-subject"/>
       </>}
     </MainWrapper>
-
-    <ModalDeleteSubject
-      deleteId={deleteId}
-      setDeleteId={setDeleteId}
-      refetch={refetch}
-    />
   </>;
 };
 
-export default Home;
+export default Subjects;

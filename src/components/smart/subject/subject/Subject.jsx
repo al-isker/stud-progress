@@ -7,7 +7,7 @@ import SubjectSettings from "../subjectSettings/SubjectSettings.jsx";
 
 import './subject.scss';
 
-const Subject = ({className, id, title, type, listScore, onDelete}) => {
+const Subject = ({className, id, title, type, listScore}) => {
   return (
     <section className={(className ?? '') + ' subject'}>
       <SubjectTitle className="subject__title" title={title} />
@@ -25,10 +25,7 @@ const Subject = ({className, id, title, type, listScore, onDelete}) => {
         />
       </div>
 
-      <SubjectSettings
-        className="subject__settings"
-        id={id}
-        onDelete={onDelete} />
+      <SubjectSettings className="subject__settings" id={id} />
     </section>
   );
 };

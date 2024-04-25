@@ -4,28 +4,29 @@ import Button from "../../../ui/button/Button.jsx";
 
 import './subject-settings.scss';
 
-const SubjectSettings = ({className, id, onDelete}) => {
+const SubjectSettings = ({className, id}) => {
   return (
     <div className={className + ' subject-settings'}>
       <Link
-        to={`subjects/${id}/edit`}
+        to={`${id}/edit`}
         className="subject-settings__btn-edit"
       >
         <Button title="редактировать" icon="edit"/>
       </Link>
 
       <Link
-        to={`subjects/${id}/add-point`}
+        to={`${id}/add-point`}
         className="subject-sttings__btn-add-point"
       >
         <Button title="добавить балл" icon="data_saver_on"/>
       </Link>
 
-      <Button
+      <Link
+        to={`${id}/delete`}
         className="subject-settings__btn-delete"
-        icon="delete"
-        onClick={onDelete}
-      />
+      >
+        <Button icon="delete" />
+      </Link>
     </div>
   );
 };

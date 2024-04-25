@@ -20,7 +20,7 @@ const CreateSubject = () => {
   return (
     <MainWrapper className="add-score">
       <HeaderForm
-        backTo="/home"
+        backTo="/subjects"
         title="Добавить балл"
       />
 

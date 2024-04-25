@@ -1,11 +1,8 @@
-import './styles/reset.css';
-import './styles/common.scss';
-import './styles/container.scss';
-
+import {useEffect} from "react";
 import {Routes, Route, useNavigate, useLocation} from "react-router-dom";
 
 import Layout from "./components/containers/layout/Layout.jsx";
-import Home from "./pages/home/Home.jsx";
+import Subjects from "./pages/subjects/Subjects.jsx";
 import AddScore from "./pages/addScore/AddScore.jsx";
 import EditSubject from "./pages/editSubject/EditSubject.jsx";
 import CreateSubject from "./pages/createSubject/CreateSubject.jsx";
@@ -13,7 +10,11 @@ import Stat from "./pages/stat/Stat.jsx";
 import Rec from "./pages/rec/Rec.jsx";
 import History from "./pages/history/History.jsx";
 import NotFound from "./pages/notFound/NotFound.jsx";
-import {useEffect} from "react";
+
+import './styles/reset.css';
+import './styles/common.scss';
+import './styles/container.scss';
+import ModalDeleteSubject from "./components/ordinary/modalWindow/ModalDeleteSubject.jsx";
 
 function App() {
   const location = useLocation();
@@ -21,19 +22,19 @@ function App() {
 
   useEffect(() => {
     if(location.pathname === '/') {
-      navigate('/home');
+      navigate('/subjects');
     }
   }, []);
 
   return (
     <Routes>
       <Route path="/" element={<Layout/>}>
-        <Route path="home/" element={null}>
-          <Route index element={<Home/>} />
-          <Route path="subjects/:subjectId/add-point" element={<AddScore/>} />
-          <Route path="subjects/:subjectId/edit" element={<EditSubject/>} />
-          <Route path="subjects/create-subject" element={<CreateSubject/>} />
+        <Route path="subjects/" element={<Subjects/>}>
+          <Route path=":subjectId/delete" element={<ModalDeleteSubject/>} />
         </Route>
+        <Route path="subjects/:subjectId/add-point" element={<AddScore/>} />
+        <Route path="subjects/:subjectId/edit" element={<EditSubject/>} />
+        <Route path="subjects/create-subject" element={<CreateSubject/>} />
         <Route path="stat" element={<Stat/>} />
         <Route path="rec" element={<Rec/>} />
         <Route path="history" element={<History/>} />

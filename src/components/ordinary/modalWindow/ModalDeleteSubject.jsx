@@ -1,33 +1,41 @@
+import {useEffect} from "react";
 import useQuerySubject from '../../../queries/subjects.query.js';
 
 import ModalWindow from "./ModalWindow.jsx";
-import {useCallback, useEffect} from "react";
+import {useNavigate, useParams} from "react-router-dom";
 
-const ModalDeleteSubject = ({deleteId, setDeleteId, refetch}) => {
-  const {isPending, mutate, isSuccess} = useQuerySubject.delete();
+const ModalDeleteSubject = () => {
+  const {data: subjects} = useQuerySubject.getAll();
+
+  const {subjectId} = useParams();
+  const targetSubject = subjects?.find(item => item.id === subjectId).title;
+
+  const {
+    isPending: isDeletePending,
+    mutate,
+    isSuccess: isDeleteSuccess
+  } = useQuerySubject.delete();
+
+  const deleteSubject = () => mutate(subjectId);
+
+  const navigate = useNavigate();
+  const back = () => navigate('/subjects');
 
   useEffect(() => {
-    if(isSuccess) {
-      refetch();
-      setDeleteId(false);
-    }
-  }, [isSuccess])
-
-  const deleteSubject = async () => {
-    await mutate(deleteId);
-  }
+    if(isDeleteSuccess) back();
+  }, [isDeleteSuccess]);
 
   return (
     <ModalWindow
       icon="delete"
-      content="Вы уверены, что хотите удалить предмет?"
+      content={`Вы уверены, что хотите удалить предмет ${targetSubject}?`}
 
-      isVisible={deleteId}
-      setIsVisible={setDeleteId}
+      isVisible={true}
+      close={back}
 
       resolveTitle="удалить"
       onResolve={deleteSubject}
-      isDisabled={isPending}
+      isDisabled={isDeletePending}
     />
   );
 };

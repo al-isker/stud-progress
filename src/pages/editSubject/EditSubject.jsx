@@ -51,7 +51,7 @@ const EditSubjectForm = ({defaultValues, onSubmit, onError}) => {
 
   return <>
     <HeaderForm
-      backTo="/home"
+      backTo="/subjects"
       title="Редактировать предмет"
     />
 

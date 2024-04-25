@@ -1,6 +1,6 @@
 import Error from "./Error.jsx";
 
-const ErrorGet = ({message, refetch}) => {
+const ErrorRefetch = ({message, refetch}) => {
   return (
     <Error
       message={message}
@@ -11,4 +11,4 @@ const ErrorGet = ({message, refetch}) => {
   );
 };
 
-export default ErrorGet;
+export default ErrorRefetch;

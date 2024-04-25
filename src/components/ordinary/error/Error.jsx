@@ -3,24 +3,22 @@ import {support} from "../../../config/API.js";
 
 import '../../../styles/container.scss';
 import './error.scss';
+import MainWrapper from "../../containers/mainWrapper/MainWrapper.jsx";
 
-const Error = ({message, buttons}) => {
-
+const Error = ({message, title, onClick}) => {
   return (
-    <div className="error container">
+    <MainWrapper className="error">
       <div className="error__message">
         <span>Error: </span>
         {message}
       </div>
 
       <div className="error__settings">
-        {buttons.map(btn => (
-          <Button
-            className="error__btn"
-            title={btn.title}
-            onClick={btn.onClick}
-          />
-        ))}
+        <Button
+          className="error__btn"
+          title={title}
+          onClick={onClick}
+        />
         <Button
           className="error__btn"
           title="тех поддержка"
@@ -29,7 +27,7 @@ const Error = ({message, buttons}) => {
           }}
         />
       </div>
-    </div>
+    </MainWrapper>
   );
 };
 

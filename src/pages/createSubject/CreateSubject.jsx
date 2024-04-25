@@ -3,7 +3,7 @@ import {useNavigate} from "react-router-dom";
 import {useForm} from "react-hook-form";
 import useQuerySubject from '../../queries/subjects.query.js';
 
-import ErrorPost from "../../components/ordinary/error/ErrorPost.jsx";
+import ErrorBack from "../../components/ordinary/error/ErrorBack.jsx";
 import MainWrapper from "../../components/containers/mainWrapper/MainWrapper.jsx";
 import HeaderForm from "../../components/ordinary/headerForm/HeaderForm.jsx";
 import SelectTitle from "../../components/ordinary/form/SelectTitle.jsx";
@@ -25,7 +25,7 @@ const CreateSubject = () => {
 
   useEffect(() => {
     if(isPostSuccess) {
-      navigate('/home');
+      navigate('/subjects');
     }
   }, [isPostSuccess]);
 
@@ -34,9 +34,9 @@ const CreateSubject = () => {
   }, []);
 
   if (postError) return (
-    <ErrorPost
+    <ErrorBack
       message={postError?.message}
-      back={() => navigate('/home')}
+      to="/subjects"
     />
   );
 
@@ -55,7 +55,7 @@ const CreateSubjectForm = ({onSubmit, isDisabled}) => {
 
   return <>
     <HeaderForm
-      backTo="/home"
+      backTo="/subjects"
       title="Новый предмет"
     />
 

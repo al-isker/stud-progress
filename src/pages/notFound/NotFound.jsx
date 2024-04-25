@@ -1,14 +1,11 @@
-import MainWrapper from "../../components/containers/mainWrapper/MainWrapper.jsx";
-
-import './not-found.scss';
+import ErrorBack from "../../components/ordinary/error/ErrorBack.jsx";
 
 const NotFound = () => {
   return (
-    <MainWrapper>
-      <div>
-        Not Found
-      </div>
-    </MainWrapper>
+    <ErrorBack
+      message="Page is not found 404"
+      to="/subjects"
+    />
   );
 };
 
