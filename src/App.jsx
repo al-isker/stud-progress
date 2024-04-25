@@ -2,7 +2,7 @@ import './styles/reset.css';
 import './styles/common.scss';
 import './styles/container.scss';
 
-import {Routes, Route} from "react-router-dom";
+import {Routes, Route, useNavigate, useLocation} from "react-router-dom";
 
 import Layout from "./components/containers/layout/Layout.jsx";
 import Home from "./pages/home/Home.jsx";
@@ -13,8 +13,18 @@ import Stat from "./pages/stat/Stat.jsx";
 import Rec from "./pages/rec/Rec.jsx";
 import History from "./pages/history/History.jsx";
 import NotFound from "./pages/notFound/NotFound.jsx";
+import {useEffect} from "react";
 
 function App() {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if(location.pathname === '/') {
+      navigate('/home');
+    }
+  }, []);
+
   return (
     <Routes>
       <Route path="/" element={<Layout/>}>
