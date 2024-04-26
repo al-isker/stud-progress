@@ -39,7 +39,6 @@ const ModalWindow = (props) => {
           key="overly"
           initial={{backdropFilter: 'blur(0px)'}}
           animate={{backdropFilter: 'blur(6px)'}}
-          exit={{backdropFilter: 'blur(0px)'}}
 
           className="modal-delete-overly"
           ref={wrapperRef}
@@ -53,7 +52,6 @@ const ModalWindow = (props) => {
         <motion.div
           initial={{opacity: 0}}
           animate={{opacity: 1}}
-          exit={{opacity: 0}}
           className="modal-delete"
         >
           <div className="modal-delete__icon material-symbols-outlined">{icon}</div>

@@ -37,6 +37,7 @@ function App() {
           <Route path="subjects/:subjectId/add-score" element={<AddScore/>} />
           <Route path="subjects/:subjectId/edit" element={<EditSubject/>} />
           <Route path="subjects/create-subject" element={<CreateSubject/>} />
+
           <Route path="stat" element={<Stat/>} />
           <Route path="rec" element={<Rec/>} />
           <Route path="history" element={<History/>} />
