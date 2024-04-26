@@ -33,6 +33,7 @@ const CreateSubject = () => {
     mutate(data);
   }, []);
 
+
   if (postError) return (
     <ErrorBack
       message={postError?.message}

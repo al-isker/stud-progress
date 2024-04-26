@@ -15,6 +15,7 @@ import './styles/reset.css';
 import './styles/common.scss';
 import './styles/container.scss';
 import ModalDeleteSubject from "./components/ordinary/modalWindow/ModalDeleteSubject.jsx";
+import {AnimatePresence} from "framer-motion";
 
 function App() {
   const location = useLocation();
@@ -27,20 +28,22 @@ function App() {
   }, []);
 
   return (
-    <Routes>
-      <Route path="/" element={<Layout/>}>
-        <Route path="subjects/" element={<Subjects/>}>
-          <Route path=":subjectId/delete" element={<ModalDeleteSubject/>} />
+    <AnimatePresence>
+      <Routes>
+        <Route path="/" element={<Layout/>}>
+          <Route path="subjects/" element={<Subjects/>}>
+            <Route path=":subjectId/delete" element={<ModalDeleteSubject/>} />
+          </Route>
+          <Route path="subjects/:subjectId/add-score" element={<AddScore/>} />
+          <Route path="subjects/:subjectId/edit" element={<EditSubject/>} />
+          <Route path="subjects/create-subject" element={<CreateSubject/>} />
+          <Route path="stat" element={<Stat/>} />
+          <Route path="rec" element={<Rec/>} />
+          <Route path="history" element={<History/>} />
+          <Route path="*" element={<NotFound/>} />
         </Route>
-        <Route path="subjects/:subjectId/add-point" element={<AddScore/>} />
-        <Route path="subjects/:subjectId/edit" element={<EditSubject/>} />
-        <Route path="subjects/create-subject" element={<CreateSubject/>} />
-        <Route path="stat" element={<Stat/>} />
-        <Route path="rec" element={<Rec/>} />
-        <Route path="history" element={<History/>} />
-        <Route path="*" element={<NotFound/>} />
-      </Route>
-    </Routes>
+      </Routes>
+    </AnimatePresence>
   );
 }
 

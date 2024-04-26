@@ -1,5 +1,5 @@
 import {useMemo} from 'react';
-import {motion} from "framer-motion";``
+import {motion} from "framer-motion";
 import {LinearProgress} from "@mui/material";
 
 import './main-wrapper.scss';

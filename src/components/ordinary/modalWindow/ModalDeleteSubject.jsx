@@ -1,11 +1,11 @@
 import {useEffect} from "react";
+import {useNavigate, useParams} from "react-router-dom";
 import useQuerySubject from '../../../queries/subjects.query.js';
 
 import ModalWindow from "./ModalWindow.jsx";
-import {useNavigate, useParams} from "react-router-dom";
 
 const ModalDeleteSubject = () => {
-  const {data: subjects} = useQuerySubject.getAll();
+  const {data: subjects, refetch} = useQuerySubject.getAll();
 
   const {subjectId} = useParams();
   const targetSubject = subjects?.find(item => item.id === subjectId).title;
@@ -22,7 +22,9 @@ const ModalDeleteSubject = () => {
   const back = () => navigate('/subjects');
 
   useEffect(() => {
-    if(isDeleteSuccess) back();
+    if(isDeleteSuccess) {
+      back();
+    }
   }, [isDeleteSuccess]);
 
   return (

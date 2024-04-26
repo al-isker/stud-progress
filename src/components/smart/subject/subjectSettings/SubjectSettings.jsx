@@ -15,8 +15,8 @@ const SubjectSettings = ({className, id}) => {
       </Link>
 
       <Link
-        to={`${id}/add-point`}
-        className="subject-sttings__btn-add-point"
+        to={`${id}/add-score`}
+        className="subject-sttings__btn-add-score"
       >
         <Button title="добавить балл" icon="data_saver_on"/>
       </Link>

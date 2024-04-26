@@ -12,7 +12,7 @@ const Subject = ({className, id, title, type, listScore}) => {
     <section className={(className ?? '') + ' subject'}>
       <SubjectTitle className="subject__title" title={title} />
       <SubjectType className="subject__type" type={type} />
-      <SubjectListScore className="subject__list-point" listScore={listScore} />
+      <SubjectListScore className="subject__list-score" listScore={listScore} />
 
       <div className="subject__average-score-status">
         <SubjectStatus
