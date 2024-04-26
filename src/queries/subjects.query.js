@@ -13,8 +13,7 @@ class useQuerySubject {
   getById = (id) => useQuery({
     queryKey: ['subjects', id],
     queryFn: async () => axios.get(`${API}/subjects/${id}`),
-    select: ({data}) => data,
-    enabled: Boolean(id)
+    select: ({data}) => data
   });
 
   create = () => useMutation({
@@ -25,7 +24,12 @@ class useQuerySubject {
   delete = () => useMutation({
     mutationKey: ['subjects'],
     mutationFn: async (id) => axios.delete(`${API}/subjects/${id}`)
-  })
+  });
+
+  edit = () => useMutation({
+    mutationKey: ['subjects'],
+    mutationFn: async ({id, newSubject}) => axios.put(`${API}/subjects/${id}`, newSubject)
+  });
 }
 
 
