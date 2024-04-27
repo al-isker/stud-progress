@@ -29,21 +29,14 @@ const CreateSubject = () => {
     }
   }, [isPostSuccess]);
 
-  const onSubmit = useCallback((data) => {
-    mutate(data);
-  }, []);
+  const createSubject = useCallback((data) => mutate(data), []);
 
 
-  if (postError) return (
-    <ErrorBack
-      message={postError?.message}
-      to="/subjects"
-    />
-  );
+  if (postError) return <ErrorBack message={postError?.message} to="/subjects"/>;
 
   return (
     <MainWrapper className="create-subject" isPending={isPostPending}>
-      <CreateSubjectForm onSubmit={onSubmit} isDisabled={isPostPending} />
+      <CreateSubjectForm onSubmit={createSubject} isDisabled={isPostPending} />
     </MainWrapper>
   );
 };

@@ -10,12 +10,6 @@ class useQuerySubject {
     select: ({data}) => data
   });
 
-  getById = (id) => useQuery({
-    queryKey: ['subjects', id],
-    queryFn: async () => axios.get(`${API}/subjects/${id}`),
-    select: ({data}) => data
-  });
-
   create = () => useMutation({
     mutationKey: ['subjects'],
     mutationFn: async (newSubject) => axios.post(`${API}/subjects`, newSubject)

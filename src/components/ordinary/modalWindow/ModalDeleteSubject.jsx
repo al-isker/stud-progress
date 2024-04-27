@@ -1,4 +1,4 @@
-import {useEffect, useMemo} from "react";
+import {useCallback, useEffect, useMemo} from "react";
 import {useNavigate, useParams} from "react-router-dom";
 import useQuerySubject from '../../../queries/subjects.query.js';
 
@@ -6,13 +6,13 @@ import ModalWindow from "./ModalWindow.jsx";
 import ErrorBack from "../error/ErrorBack.jsx";
 
 const ModalDeleteSubject = () => {
-  const {data: subjects, refetch} = useQuerySubject.getAll();
-
   const {subjectId} = useParams();
 
-  const targetSubject = useMemo(() => {
+  const {data: subjects, error: getError, refetch} = useQuerySubject.getAll();
+
+  const targetSubjectTitle = useMemo(() => {
     return subjects?.find(item => item.id === subjectId).title;
-  }, [subjectId]);
+  }, [subjects]);
 
   const {
     isPending: isDeletePending,
@@ -21,7 +21,7 @@ const ModalDeleteSubject = () => {
     error: deleteError
   } = useQuerySubject.delete();
 
-  const deleteSubject = () => mutate(subjectId);
+  const deleteSubject = useCallback(() => mutate(subjectId), []);
 
   const navigate = useNavigate();
   const back = () => navigate('/subjects');
@@ -33,12 +33,14 @@ const ModalDeleteSubject = () => {
     }
   }, [isDeleteSuccess]);
 
-  if(deleteError) return <ErrorBack message={error.message} to="/subjects" />;
+
+  if(getError) return <ErrorBack message={getError?.message} to="/subjects" />;
+  if(deleteError) return <ErrorBack message={deleteError?.message} to="/subjects" />;
 
   return (
     <ModalWindow
       icon="delete"
-      content={`Вы уверены, что хотите удалить предмет ${targetSubject}?`}
+      content={`Вы уверены, что хотите удалить предмет ${targetSubjectTitle ?? ''}?`}
 
       isVisible={true}
       close={back}
