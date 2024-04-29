@@ -16,6 +16,7 @@ Web-прилложение для ведения учёта об успевае�
 - React Hook Form,
 - React Select,
 - Material UI
+- Sass
 - Framer Motion
 
 ## Roadmap
