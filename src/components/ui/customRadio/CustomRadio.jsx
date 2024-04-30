@@ -4,6 +4,7 @@ import './custom-radio.scss';
 
 const CustomRadio = (props) => {
   const {
+    className,
     control,
     name,
     required,
@@ -13,7 +14,10 @@ const CustomRadio = (props) => {
   } = props;
 
   return (
-    <div className="custom-radio" style={{"--amount-items": options.length}}>
+    <div
+      className={(className ?? '') + ' custom-radio'}
+      style={{"--amount-items": options.length}}
+    >
       {options.map((option, i) => (
         <Controller
           key={i}
@@ -27,23 +31,23 @@ const CustomRadio = (props) => {
             },
           }}
 
-          defaultValue={defaultValue === option.value}
+          defaultValue={defaultValue === option}
 
           render={({field}) => (
             <label className={
               'custom-radio__btn' +
-              (field.value == option.value ? ' custom-radio__btn_active' : '') +
+              (field.value == option ? ' custom-radio__btn_active' : '') +
               (isDisabled ? ' custom-radio__btn_disabled' : '')
             }>
               <input
                 className="custom-radio__input"
                 type="radio"
-                value={option.value}
+                value={option}
                 onChange={field.onChange}
-                checked={field.value == option.value}
+                checked={field.value == option}
                 disabled={isDisabled}
               />
-              {option.label}
+              {option}
             </label>
           )}
         />
