@@ -1,8 +1,8 @@
 import InputWrapper from "../inputWrapper/InputWrapper.jsx";
 import CustomRadio from "../../ui/customRadio/CustomRadio.jsx";
-import {subjectTargets} from "../../../config/subjectData.js";
+import {subjectScores} from "../../../config/subjectData.js";
 
-const options = subjectTargets.map(item => ({
+const options = subjectScores.map(item => ({
   value: item,
   label: String(item)
 }));

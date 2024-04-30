@@ -49,6 +49,4 @@ export const subjectTypes = [
   'зачёт'
 ];
 
-export const subjectTargets = [2, 3, 4, 5];
-
-export const subjectScores = ['нб', 2, 3, 4, 5];
+export const subjectScores = [2, 3, 4, 5];

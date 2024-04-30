@@ -7,7 +7,7 @@ const options = subjectScores.map(item => ({
   label: String(item)
 }));
 
-const SelectScore = ({control, errors}) => {
+const SelectScore = ({control, errors, isDisabled, defaultValue}) => {
   return (
     <InputWrapper
       error={errors.score?.message}
@@ -16,6 +16,8 @@ const SelectScore = ({control, errors}) => {
         control={control}
         name="score"
         options={options}
+        isDisabled={isDisabled}
+        defaultValue={defaultValue}
       />
     </InputWrapper>
   );

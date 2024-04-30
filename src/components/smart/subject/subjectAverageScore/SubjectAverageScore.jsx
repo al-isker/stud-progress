@@ -1,16 +1,16 @@
+import {useMemo} from "react";
+
 import './subject-average-score.scss';
 
 const SubjectAverageScore = ({className, listScore}) => {
-  if (!listScore.length) return null;
-
-  const averScore = listScore.reduce((acc, n) => acc + n) / listScore.length;
-  // const progress = averScore / maxScore * 100;
-  const progress = averScore * 20;
+  const averScore = useMemo(() => {
+    return listScore.reduce((acc, n) => acc + n, 0) / listScore.length;
+  }, []);
 
   return (
     <div
       className={className + ' subject-average-score'}
-      style={{'--progress': progress + '%'}}
+      style={{'--progress': `${averScore * 20}%`}}
     >
       <div className="subject-average-score__value">
         {/*{averScore.toFixed(maxScore.toString().length === 1 ? 1 : 0)}*/}

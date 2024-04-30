@@ -8,7 +8,7 @@ import ErrorBack from "../error/ErrorBack.jsx";
 const ModalDeleteSubject = () => {
   const {subjectId} = useParams();
 
-  const {data: subjects, error: getError, refetch} = useQuerySubject.getAll();
+  const {data: subjects, error: getError, refetch: getRefetch} = useQuerySubject.getAll();
 
   const targetSubjectTitle = useMemo(() => {
     return subjects?.find(item => item.id === subjectId).title;
@@ -28,7 +28,7 @@ const ModalDeleteSubject = () => {
 
   useEffect(() => {
     if(isDeleteSuccess) {
-      refetch().then();
+      getRefetch().then();
       back();
     }
   }, [isDeleteSuccess]);

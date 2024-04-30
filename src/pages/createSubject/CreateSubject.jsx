@@ -15,28 +15,30 @@ import './create-subject.scss';
 
 const CreateSubject = () => {
   const {
-    isPending: isPostPending,
+    isPending: isCreatePending,
     mutate,
-    isSuccess: isPostSuccess,
-    error: postError
+    isSuccess: isCreateSuccess,
+    error: createError
   } = useQuerySubject.create();
 
   const navigate = useNavigate();
 
   useEffect(() => {
-    if(isPostSuccess) {
+    if(isCreateSuccess) {
       navigate('/subjects');
     }
-  }, [isPostSuccess]);
+  }, [isCreateSuccess]);
 
-  const createSubject = useCallback((data) => mutate(data), []);
+  const createSubject = useCallback(({title, type, target}) => {
+    mutate({title, type, target, date: new Date()});
+  }, []);
 
 
-  if (postError) return <ErrorBack message={postError?.message} to="/subjects"/>;
+  if (createError) return <ErrorBack message={createError?.message} to="/subjects"/>;
 
   return (
-    <MainWrapper className="create-subject" isPending={isPostPending}>
-      <CreateSubjectForm onSubmit={createSubject} isDisabled={isPostPending} />
+    <MainWrapper className="create-subject" isPending={isCreatePending}>
+      <CreateSubjectForm onSubmit={createSubject} isDisabled={isCreatePending} />
     </MainWrapper>
   );
 };

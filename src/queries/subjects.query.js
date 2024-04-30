@@ -10,15 +10,18 @@ class useQuerySubject {
     select: ({data}) => data
   });
 
+
   create = () => useMutation({
     mutationKey: ['subjects'],
     mutationFn: async (newSubject) => axios.post(`${API}/subjects`, newSubject)
   });
 
+
   delete = () => useMutation({
     mutationKey: ['subjects'],
     mutationFn: async (id) => axios.delete(`${API}/subjects/${id}`)
   });
+
 
   edit = () => useMutation({
     mutationKey: ['subjects'],
