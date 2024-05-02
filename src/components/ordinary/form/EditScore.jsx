@@ -1,27 +1,34 @@
-import CustomRadio from "../../ui/customRadio/CustomRadio.jsx";
 import Button from "../../ui/button/Button.jsx";
-import {subjectScores} from "../../../config/subjectData.js";
 
 import './edit-score.scss';
 
-const EditScore = ({control, isDisabled, defaultValue}) => {
-  // убрать выборку и оставить только вариант удаления
+const EditScore = ({score, date, isDisabled}) => {
+  const dateObj = new Date(date);
 
   return <>
     <div className="edit-score">
-      <CustomRadio
-        className="edit-score__custom-radio"
-        control={control}
-        name="score"
-        options={subjectScores}
-        defaultValue={defaultValue}
-        isDisabled={isDisabled}
-      />
-      <span className="edit-score__line"></span>
+      <div className="edit-score__score">{score}</div>
+      <div className="edit-score__date-time">
+        <div className="edit-score__date">
+          {dateObj.toLocaleString('default', {
+            month: 'short',
+            day: 'numeric',
+            year: 'numeric',
+          })}
+        </div>
+        <span className="edit-score__line"></span>
+        <div className="edit-score__date">
+          {dateObj.toLocaleString('default', {
+            hour: 'numeric',
+            minute: 'numeric'
+          })}
+        </div>
+      </div>
       <Button
         className="edit-score__button"
         icon="delete"
         onClick={() => console.log('click delete')}
+        isDisabled={isDisabled}
       />
     </div>
   </>

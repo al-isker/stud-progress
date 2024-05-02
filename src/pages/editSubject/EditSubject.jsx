@@ -11,10 +11,10 @@ import SelectTitle from "../../components/ordinary/form/SelectTitle.jsx";
 import SelectType from "../../components/ordinary/form/SelectType.jsx";
 import SelectTarget from "../../components/ordinary/form/SelectTarget.jsx";
 import InputWrapper from "../../components/ordinary/inputWrapper/InputWrapper.jsx";
+import EditScore from "../../components/ordinary/form/EditScore.jsx";
 import Button from "../../components/ui/button/Button.jsx";
 
 import './edit-subject.scss';
-import EditScore from "../../components/ordinary/form/EditScore.jsx";
 
 const EditSubject = () => {
   const {subjectId} = useParams();
@@ -27,7 +27,6 @@ const EditSubject = () => {
   } = useQuerySubject.getAll();
 
   const targetSubject = useMemo(() => {
-    console.log(subjects?.find(item => item.id === subjectId))
     return subjects?.find(item => item.id === subjectId);
   }, [subjects]);
 
@@ -95,13 +94,8 @@ const EditSubjectForm = ({defaultValues, onSubmit, isDisabled}) => {
       <SelectTarget control={control} errors={formError} defaultValue={defaultValues} isDisabled={isDisabled} />
 
       <InputWrapper title="Оценки">
-        {defaultValues.listScore.map((item, i) => (
-          <EditScore
-            key={i}
-            control={control}
-            isDisabled={isDisabled}
-            defaultValue={item.score}
-          />
+        {defaultValues.listScore.map(({score, date}, i) => (
+          <EditScore key={i} score={score} date={date} />
         ))}
       </InputWrapper>
 
