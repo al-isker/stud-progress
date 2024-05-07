@@ -12,7 +12,7 @@ const SelectScore = ({control, errors, isDisabled, defaultValue}) => {
         name="score"
         options={subjectScores}
         isDisabled={isDisabled}
-        defaultValue={defaultValue?.score}
+        defaultValue={defaultValue}
       />
     </InputWrapper>
   );

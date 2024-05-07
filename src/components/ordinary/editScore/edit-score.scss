@@ -1,0 +1,43 @@
+@import "../../../styles/colors";
+
+.edit-score {
+  &:first-child {
+    margin-top: 4px;
+  }
+
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+
+  &__date {
+    display: flex;
+    gap: 6px;
+    font-size: 0.9em;
+    font-weight: 500;
+    color: transparentize($black, 0.2);
+  }
+
+  &__control {
+    height: 28px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  &__custom-radio {
+    width: 80%;
+  }
+
+  &__line {
+    height: 100%;
+    width: 1.5px;
+    border-radius: 1px;
+    background-color: transparentize($black, 0.8);
+  }
+
+  &__button {
+    width: auto;
+    height: 100%;
+    flex-grow: 1;
+  }
+}

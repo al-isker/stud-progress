@@ -1,7 +1,7 @@
 import InputWrapper from "../inputWrapper/InputWrapper.jsx";
 import CustomInput from "../../ui/customInput/CustomInput.jsx";
 
-const InputNumber = ({control, errors, defaultValue}) => {
+const InputNumber = ({control, errors, min, max, defaultValue}) => {
   return (
     <InputWrapper
       title="Цель"
@@ -12,9 +12,9 @@ const InputNumber = ({control, errors, defaultValue}) => {
         control={control}
         type="number"
         name="target"
-        min={1}
-        max={5}
-        defaultValue={defaultValue ?? 5}
+        min={min}
+        max={max}
+        defaultValue={defaultValue}
       />
     </InputWrapper>
   );

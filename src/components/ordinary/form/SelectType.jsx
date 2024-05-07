@@ -19,7 +19,7 @@ const SelectType = ({control, errors, isDisabled, defaultValue}) => {
         name="type"
         options={typeOptions}
         idDisabled={isDisabled}
-        defaultValue={defaultValue?.type}
+        defaultValue={defaultValue}
       />
     </InputWrapper>
   );

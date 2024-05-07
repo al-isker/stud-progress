@@ -19,7 +19,7 @@ const SelectTitle = ({control, isDisabled, errors, defaultValue}) => {
         name="title"
         options={subjectOptions}
         idDisabled={isDisabled}
-        defaultValue={defaultValue?.title}
+        defaultValue={defaultValue}
       />
     </InputWrapper>
   );

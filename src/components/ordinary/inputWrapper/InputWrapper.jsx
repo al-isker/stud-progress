@@ -2,14 +2,16 @@ import './input-wrapper.scss';
 
 const InputWrapper = ({children, className, title, error, htmlFor}) => {
   return (
-    <section className={(className ?? '') + ' input-wrapper'}>
+    <section className="input-wrapper">
       {title && (
         <label className="input-wrapper__title" htmlFor={htmlFor}>
           {title}
         </label>
       )}
 
-      {children}
+      <div className={className}>
+        {children}
+      </div>
 
       {error && (
         <div className="input-wrapper__error">
